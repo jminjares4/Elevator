@@ -15,6 +15,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "driver/uart.h"
+#include <string.h>
 
 // UART 0 Pins
 #define UART_0_RX 3

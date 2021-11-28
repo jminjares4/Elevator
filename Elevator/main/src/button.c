@@ -10,6 +10,9 @@
  */
 #include "inc/button.h"
 
+
+int gpio_install_count = 0;
+
 /**
  * @brief Button Initialization for buttons
  * @param button pass a Button by reference
@@ -73,6 +76,9 @@ void buttonInitIRQ(Button *button)
     io_conf.pin_bit_mask = (1ULL << button->gpio); // set gpio that will be used for input
 
     gpio_config(&io_conf); //set configuration
-    gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT); //set default flag for interrupts
+
+
+    if(gpio_install_count++ == 0)
+        gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT); //set default flag for interrupts
     gpio_isr_handler_add(button->gpio, button->func, (void *)button->gpio); //pass the gpio number, routine and argument for the routine
 }

@@ -10,6 +10,9 @@
  */
 #include "inc/motion_sensor.h"
 
+
+int motion_sensor_gpio_install_count = 0;
+
 MotionSensor hc_sr501 = {
     .gpio = MOTION_SENSOR_GPIO,
     .pull_sel.down = PULL_SEL_EN,
@@ -42,6 +45,7 @@ void motionSensorInit(MotionSensor *sensor)
     io_conf.pin_bit_mask = (1ULL << sensor->gpio); // set gpio that will be used for input
 
     gpio_config(&io_conf); //set configuration
-    gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT); //set default flag for interrupts
+    if(motion_sensor_gpio_install_count++ == 0)
+        gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT); //set default flag for interrupts
     gpio_isr_handler_add(sensor->gpio, sensor->func, (void *)sensor->gpio); //pass the gpio number, routine and argument for the routine
 }

@@ -48,35 +48,6 @@ void adcInit(Accelerometer *acc)
  */
 int read_axis(Accelerometer *acc, int id)
 {
-    // int adcRaw = 0;
-    // switch (id)
-    // {
-    //     case 0:
-    //         adcRaw = adc1_get_raw(acc->xaxis);
-    //         break;
-    //     case 1:
-    //         adcRaw = adc1_get_raw(acc->yaxis);
-    //         break;
-    //     case 2:
-    //         adcRaw = adc1_get_raw(acc->zaxis);
-    //         break;
-    //     default:
-    //         adcRaw = 0;
-    // }
-    // return adcRaw;
-
-    // int adcRaw = 0;
-    // if(id == 0){
-    //      adcRaw = adc1_get_raw(acc->xaxis);
-    // }else if(id == 1){
-    //      adcRaw = adc1_get_raw(acc->yaxis);
-    // }else if(id == 2){
-    //      adcRaw = adc1_get_raw(acc->zaxis);
-    // }else{
-    //     adcRaw = 0;
-    // }
-    // return adcRaw;
-
     /**
      * if 0:
      *      read x-axis

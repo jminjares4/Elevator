@@ -17,6 +17,7 @@
 #include "driver/gpio.h"
 
 #define ESP_INTR_FLAG_DEFAULT 0 //default interrupt flag
+#define ESP_INTR_FLAG_CUSTOM  1 //share memory
 
 #define MOTION_SENSOR_GPIO 21 //motion sensor gpio 
 #define PULL_SEL_EN 1 //Macro for pull selection

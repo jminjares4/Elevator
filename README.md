@@ -18,7 +18,7 @@ Create a elevator controller
   - pressure_sensor.c
   - serial_communication.c
   - servo.c
-
+- Doxyfile
 ## Components
 ---
 * ADXL335

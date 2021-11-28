@@ -12,7 +12,7 @@
 
 PressureSensor pressSens = {
     .width = PRESSURE_SENSOR_ADC_WIDTH,
-    .channel = PRESUSRE_SENSOR_CH,
+    .channel = PRESSURE_SENSOR_CH,
     .atten = PRESSURE_SENSOR_ADC_ATTEN,
 };
 

@@ -17,6 +17,8 @@
 #include "driver/gpio.h"
 
 #define ESP_INTR_FLAG_DEFAULT 0 //default interrupt flag
+#define PULL_SEL_EN 1  // enable selected pull selection
+
 
 /**
  * @struct Button button.h

@@ -17,7 +17,7 @@
 #include "driver/adc.h"
 
 #define PRESSURE_SENSOR_ADC_WIDTH (adc_bits_width_t)(ADC_WIDTH_BIT_12) // ADC width of 12 Bits 2**12 - 1
-#define PRESUSRE_SENSOR_CH ADC1_CHANNEL_5 // pressure sensor channel
+#define PRESSURE_SENSOR_CH ADC1_CHANNEL_5 // pressure sensor channel
 #define PRESSURE_SENSOR_ADC_ATTEN (adc_atten_t)(ADC_ATTEN_DB_11)  // ADC attenuation set at 11 for range of 2600mV
 #define PRESSURE_SENSOR_THRESHOLD 1000 //pressure sensor threshold 
 

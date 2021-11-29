@@ -26,6 +26,9 @@
 #define SERVO_MAX_PULSEWIDTH_US (2000) // max pulse width
 #define SERVO_MAX_DEGREE        (90)   //max degree
 
+#define SERVO_OPEN  -90
+#define SERVO_CLOSE 90
+
 /**
  * @struct Servo servo.h
  * @brief Servo struct for SG90 servo motor

@@ -50,3 +50,9 @@ void ledOff(Led *led){
     gpio_set_level(led->gpio, LOW);
     led->state = LED_OFF;
 }
+
+void ledAllOff(Led *led, int size){
+    for(int i =0 ; i < size; i++){
+        ledOff(&led[i]);
+    }
+}

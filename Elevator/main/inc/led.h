@@ -91,4 +91,6 @@ void ledOn(Led *led);
  */
 void ledOff(Led *led);
 
+
+void ledAllOff(Led *led, int size);
 #endif 

@@ -20,9 +20,9 @@
  * @note  Adjustable Macros to channel any of the adc pins of the accelerometer
  */
 #define ACC_ADC_WIDTH (adc_bits_width_t)(ADC_WIDTH_BIT_12) // ADC width of 12 Bits 2**12 - 1
-#define X_AXIS (adc1_channel_t)(ADC1_CHANNEL_6) //X-axis adc channel 
-#define Y_AXIS (adc1_channel_t)(ADC1_CHANNEL_7) //Y-axis adc channel
-#define Z_AXIS (adc1_channel_t)(ADC1_CHANNEL_4) //Z-axis adc channel
+#define X_AXIS (adc1_channel_t)(ADC1_CHANNEL_6) //X-axis adc channel 6
+#define Y_AXIS (adc1_channel_t)(ADC1_CHANNEL_7) //Y-axis adc channel 7
+#define Z_AXIS (adc1_channel_t)(ADC1_CHANNEL_4) //Z-axis adc channel 4
 #define ACC_ADC_ATTEN (adc_atten_t)(ADC_ATTEN_DB_11) // ADC attenuation set at 11 for range of 2600mV
 
 /**

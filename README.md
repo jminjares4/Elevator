@@ -1,22 +1,22 @@
 # Elevator Final Project
 Create a elevator controller
 ```
-|-- main
-|-- inc
-  |-- accelerometer.h
-  |-- button.h
-  |-- led.h
-  |-- pressure_sensor.h
-  |-- serial_communication.h
-  |-- servo.h
-|-- src
-  |-- accelerometer.c
-  |-- button.c
-  |-- led.c
-  |-- pressure_sensor.c
-  |-- serial_communication.c
-  |-- servo.c
-|-- Doxyfile
+├── main
+├── inc
+    ├── accelerometer.h
+    ├── button.h
+    ├── led.h
+    ├── pressure_sensor.h
+    ├── serial_communication.h
+    └── servo.h
+├── src
+    ├── accelerometer.c
+    ├── button.c
+    ├── led.c
+    ├── pressure_sensor.c
+    ├── serial_communication.c
+    └── servo.c
+├── Doxyfile
 ```
 ## Components
 ---

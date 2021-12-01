@@ -10,13 +10,7 @@
  */
 #include "inc/servo.h"
 
-Servo SG90 = {
-    .timerNum = SERVO_TIMER,
-    .pwmUnit = SERVO_PWM_UNIT,
-    .signal = SERVO_PWM_SIGNAL,
-    .gpio = SERVO_GPIO,
-    .angle = 0
-};
+
 
 static inline uint32_t example_convert_servo_angle_to_duty_us(int angle)
 {

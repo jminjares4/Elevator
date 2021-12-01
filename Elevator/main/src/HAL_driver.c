@@ -90,7 +90,7 @@ SerialComm dispatcher = {
 
 Button emergencyButton = {
     .gpio = 5,
-    .pull_sel.down = PULL_SEL_EN,
+    .pull_sel.up = PULL_SEL_EN,
     .func = &elevatorButtonInterrupt,
 };
 
@@ -108,4 +108,13 @@ Elevator myElevator = {
     .state = IDLE,
     .prevState = IDLE,
     .dir = NONE,
+};
+
+
+Servo SG90 = {
+    .timerNum = SERVO_TIMER,
+    .pwmUnit = SERVO_PWM_UNIT,
+    .signal = SERVO_PWM_SIGNAL,
+    .gpio = SERVO_GPIO,
+    .angle = 0
 };

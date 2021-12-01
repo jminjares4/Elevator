@@ -36,6 +36,9 @@ extern int arrowSize;
 extern int elevatorButtonSize;
 
 
+SemaphoreHandle_t semaphore1; //, semaphore2;
+// QueueHandle_t queue1;
+
 QueueHandle_t myQueue;
 
 Button dispatcherCallButton[] = {
@@ -45,12 +48,12 @@ Button dispatcherCallButton[] = {
         .func = NULL,
     },
     {
-        .gpio = 18,
+        .gpio = 19,
         .pull_sel.down = PULL_SEL_EN,
         .func = NULL,
     },
     {
-        .gpio = 18,
+        .gpio = 21,
         .pull_sel.down = PULL_SEL_EN,
         .func = NULL,
     },
@@ -66,27 +69,34 @@ QueueHandle_t dispatcherQueue;
 
 void task1(void *pvParameter)
 {
+    uint8_t num = 0;
     while (1)
     {
-        vTaskDelay(10/portTICK_RATE_MS); //debounce
+        vTaskDelay(100/portTICK_RATE_MS); //debounce
         if(buttonRead(&dispatcherCallButton[CALL_BUTTON_0])){
-            xQueueSend(dispatcherQueue,(void *)1, 0);
-        }else if(buttonRead(&dispatcherCallButton[CALL_BUTTON_0])){
-            xQueueSend(dispatcherQueue,(void *)2, 0);
-        }else if(buttonRead(&dispatcherCallButton[CALL_BUTTON_0])){
-            xQueueSend(dispatcherQueue,(void *)3, 0);
+            num = 1;
+            xQueueSend(dispatcherQueue,(void *)&num, 0);
+        }else if(buttonRead(&dispatcherCallButton[CALL_BUTTON_1])){
+            num = 2;
+            xQueueSend(dispatcherQueue,(void *)&num, 0);
+        }else if(buttonRead(&dispatcherCallButton[CALL_BUTTON_2])){
+            num = 3;
+            xQueueSend(dispatcherQueue,(void *)&num, 0);
         }else{
             vTaskDelay(100/portTICK_PERIOD_MS);
         }
+        printf("Num: %d\n", num);
+        num = 0;
     }
 }
 
 void task2(void *pvParameter){
-    int data = 0;
+    uint8_t data = 0;
     while(1){
         if(xQueueReceive(dispatcherQueue,&data, 100)){
-            myElevator.floor_number = data;
+            myElevator.destination = data;
             //update elevator
+            // xSemaphoreGive(semaphore1);
             //send semaphore
         }else{
             vTaskDelay(100/portTICK_PERIOD_MS);
@@ -94,14 +104,11 @@ void task2(void *pvParameter){
     }
 }
 
-// SemaphoreHandle_t semaphore1, semaphore2;
-// QueueHandle_t queue1;
-
 void task3(void *pvParameter)
 {
     while (1)
     {
-        ///    if (xSemaphoreTake(semaphore1, pdMS_TO_TICKS(100)) == pdTRUE)
+        // if (xSemaphoreTake(semaphore1, pdMS_TO_TICKS(100)) == pdTRUE)
         // {
         switch (myElevator.state)
         {
@@ -150,7 +157,7 @@ void task3(void *pvParameter)
                     myElevator.door = CLOSE;
                     //    xSemaphoreGive(semaphore1);
                 }
-            }
+            // }
             break;
         case MOVE:
             vTaskDelay(1000 / portTICK_RATE_MS);
@@ -219,7 +226,7 @@ void task3(void *pvParameter)
             break;
         }
         vTaskDelay(100 / portTICK_PERIOD_MS);
-        // }
+        }
     }
 }
 
@@ -266,7 +273,7 @@ void task4(void *pvParameter)
 
         p = read_pressure_sensor(&pressSens);
 
-        // printf("x: %d\ty: %d\tz:%d\tp: %d\n", x_axis, y_axis, z_axis, p);
+        printf("x: %d\ty: %d\tz:%d\tp: %d\n", x_axis, y_axis, z_axis, p);
         // if (x_axis > 1950 || x_axis < 1750 || y_axis > 1950 || y_axis < 1750 || z_axis > Z_AXIS_THRESH || p > PRESSURE_SENSOR_THRESHOLD)
         // {
         //     // myElevator.prevState = IDLE;
@@ -333,15 +340,15 @@ void app_main(void)
     myQueue = xQueueCreate(3, sizeof(uint8_t));
 
     // queue1 = xQueueCreate(3, sizeof(int));
-    // semaphore1 = xSemaphoreCreateBinary();
+    semaphore1 = xSemaphoreCreateBinary();
     // semaphore2 = xSemaphoreCreateBinary();
 
     serialCommInit(&dispatcher);
 
     dispatcherQueue = xQueueCreate(3, sizeof(uint8_t));
 
-    // xTaskCreatePinnedToCore(&task1, "task 1", 2048, NULL, 7, NULL,0);
-    // xTaskCreate(&task2, "task 2", 2048, NULL, 6, NULL);
+    xTaskCreate(&task1, "task 1", 2048, NULL, 7, NULL);
+    xTaskCreate(&task2, "task 2", 2048, NULL, 6, NULL);
     xTaskCreate(&task3, "task 3", 2048, NULL, 5, NULL);
     xTaskCreate(&task4, "task 4", 2048, NULL, 4, NULL);
     xTaskCreate(&task5, "task 5", 2048, NULL, 3, NULL);

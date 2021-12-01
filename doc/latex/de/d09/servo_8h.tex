@@ -1,0 +1,199 @@
+\hypertarget{servo_8h}{}\doxysection{main/inc/servo.h File Reference}
+\label{servo_8h}\index{main/inc/servo.h@{main/inc/servo.h}}
+
+
+Hardware Application Layer for \mbox{\hyperlink{struct_servo}{Servo}} SG90 motor.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}freertos/\+Free\+RTOS.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freertos/task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}driver/mcpwm.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_servo}{Servo}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_servo}{Servo}} struct for SG90 servo motor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{servo_8h_a2f25ff69829ccce66155141af25392c2}{SERVO\+\_\+\+PWM\+\_\+\+UNIT}}~(mcpwm\+\_\+unit\+\_\+t)MCPWM\+\_\+\+UNIT\+\_\+0
+\item 
+\#define \mbox{\hyperlink{servo_8h_a2b58979fa339f2cae758da3f07bef936}{SERVO\+\_\+\+PWM\+\_\+\+SIGNAL}}~(mcpwm\+\_\+io\+\_\+signals\+\_\+t)(MCPWM0A)
+\item 
+\#define \mbox{\hyperlink{servo_8h_a3d62c2d0eb44f28e242392b43ff958b3}{SERVO\+\_\+\+GPIO}}~18
+\item 
+\#define \mbox{\hyperlink{servo_8h_a7d9c36e285f4f83cc8d30e9ccfe403af}{SERVO\+\_\+\+FREQ}}~50
+\item 
+\#define \mbox{\hyperlink{servo_8h_a5ae00189f7e5d8ce80129f55f066e73d}{SERVO\+\_\+\+TIMER}}~(mcpwm\+\_\+timer\+\_\+t)MCPWM\+\_\+\+TIMER\+\_\+0
+\item 
+\#define \mbox{\hyperlink{servo_8h_a7d58f3547f66a500716d6401a2eb5fb3}{SERVO\+\_\+\+MIN\+\_\+\+PULSEWIDTH\+\_\+\+US}}~(1000)
+\item 
+\#define \mbox{\hyperlink{servo_8h_a3c252ebbe666084cbd2f993e45e71c62}{SERVO\+\_\+\+MAX\+\_\+\+PULSEWIDTH\+\_\+\+US}}~(2000)
+\item 
+\#define \mbox{\hyperlink{servo_8h_a600a905aa0df8e867a85378c665f703c}{SERVO\+\_\+\+MAX\+\_\+\+DEGREE}}~(90)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_servo}{Servo}} \mbox{\hyperlink{servo_8h_ab1077fd010eae010c80797b98ad61308}{Servo}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{servo_8h_a37c679afc52b5495530ea4c1e6b2e3be}{move\+Servo}} (\mbox{\hyperlink{struct_servo}{Servo}} $\ast$servo, int angle)
+\begin{DoxyCompactList}\small\item\em move\+Servo will move the servo motor by angles \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{servo_8h_ae468aed046985a93605f270d01344da9}{servo\+Init}} (\mbox{\hyperlink{struct_servo}{Servo}} $\ast$servo)
+\begin{DoxyCompactList}\small\item\em servo\+Init will initialize servo motor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{servo_8h_a178a016d3de92d8ddbaa82730cddd9f6}{halt\+Servo}} (\mbox{\hyperlink{struct_servo}{Servo}} $\ast$servo)
+\begin{DoxyCompactList}\small\item\em halt\+Servo will stop the timer of the mcpwm \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{servo_8h_a10b52acaf4785f8f65cb2e6164d0aeaf}{start\+Servo}} (\mbox{\hyperlink{struct_servo}{Servo}} $\ast$servo)
+\begin{DoxyCompactList}\small\item\em start\+Servo will start the time of the mcpwm \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Hardware Application Layer for \mbox{\hyperlink{struct_servo}{Servo}} SG90 motor. 
+
+\begin{DoxyAuthor}{Author}
+Jesus Minjares (\href{https://github.com/jminjares4}{\texttt{ https\+://github.\+com/jminjares4}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/11-\/27
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{servo_8h_a7d9c36e285f4f83cc8d30e9ccfe403af}\label{servo_8h_a7d9c36e285f4f83cc8d30e9ccfe403af}} 
+\index{servo.h@{servo.h}!SERVO\_FREQ@{SERVO\_FREQ}}
+\index{SERVO\_FREQ@{SERVO\_FREQ}!servo.h@{servo.h}}
+\doxysubsubsection{\texorpdfstring{SERVO\_FREQ}{SERVO\_FREQ}}
+{\footnotesize\ttfamily \#define SERVO\+\_\+\+FREQ~50}
+
+\mbox{\Hypertarget{servo_8h_a3d62c2d0eb44f28e242392b43ff958b3}\label{servo_8h_a3d62c2d0eb44f28e242392b43ff958b3}} 
+\index{servo.h@{servo.h}!SERVO\_GPIO@{SERVO\_GPIO}}
+\index{SERVO\_GPIO@{SERVO\_GPIO}!servo.h@{servo.h}}
+\doxysubsubsection{\texorpdfstring{SERVO\_GPIO}{SERVO\_GPIO}}
+{\footnotesize\ttfamily \#define SERVO\+\_\+\+GPIO~18}
+
+\mbox{\Hypertarget{servo_8h_a600a905aa0df8e867a85378c665f703c}\label{servo_8h_a600a905aa0df8e867a85378c665f703c}} 
+\index{servo.h@{servo.h}!SERVO\_MAX\_DEGREE@{SERVO\_MAX\_DEGREE}}
+\index{SERVO\_MAX\_DEGREE@{SERVO\_MAX\_DEGREE}!servo.h@{servo.h}}
+\doxysubsubsection{\texorpdfstring{SERVO\_MAX\_DEGREE}{SERVO\_MAX\_DEGREE}}
+{\footnotesize\ttfamily \#define SERVO\+\_\+\+MAX\+\_\+\+DEGREE~(90)}
+
+\mbox{\Hypertarget{servo_8h_a3c252ebbe666084cbd2f993e45e71c62}\label{servo_8h_a3c252ebbe666084cbd2f993e45e71c62}} 
+\index{servo.h@{servo.h}!SERVO\_MAX\_PULSEWIDTH\_US@{SERVO\_MAX\_PULSEWIDTH\_US}}
+\index{SERVO\_MAX\_PULSEWIDTH\_US@{SERVO\_MAX\_PULSEWIDTH\_US}!servo.h@{servo.h}}
+\doxysubsubsection{\texorpdfstring{SERVO\_MAX\_PULSEWIDTH\_US}{SERVO\_MAX\_PULSEWIDTH\_US}}
+{\footnotesize\ttfamily \#define SERVO\+\_\+\+MAX\+\_\+\+PULSEWIDTH\+\_\+\+US~(2000)}
+
+\mbox{\Hypertarget{servo_8h_a7d58f3547f66a500716d6401a2eb5fb3}\label{servo_8h_a7d58f3547f66a500716d6401a2eb5fb3}} 
+\index{servo.h@{servo.h}!SERVO\_MIN\_PULSEWIDTH\_US@{SERVO\_MIN\_PULSEWIDTH\_US}}
+\index{SERVO\_MIN\_PULSEWIDTH\_US@{SERVO\_MIN\_PULSEWIDTH\_US}!servo.h@{servo.h}}
+\doxysubsubsection{\texorpdfstring{SERVO\_MIN\_PULSEWIDTH\_US}{SERVO\_MIN\_PULSEWIDTH\_US}}
+{\footnotesize\ttfamily \#define SERVO\+\_\+\+MIN\+\_\+\+PULSEWIDTH\+\_\+\+US~(1000)}
+
+\mbox{\Hypertarget{servo_8h_a2b58979fa339f2cae758da3f07bef936}\label{servo_8h_a2b58979fa339f2cae758da3f07bef936}} 
+\index{servo.h@{servo.h}!SERVO\_PWM\_SIGNAL@{SERVO\_PWM\_SIGNAL}}
+\index{SERVO\_PWM\_SIGNAL@{SERVO\_PWM\_SIGNAL}!servo.h@{servo.h}}
+\doxysubsubsection{\texorpdfstring{SERVO\_PWM\_SIGNAL}{SERVO\_PWM\_SIGNAL}}
+{\footnotesize\ttfamily \#define SERVO\+\_\+\+PWM\+\_\+\+SIGNAL~(mcpwm\+\_\+io\+\_\+signals\+\_\+t)(MCPWM0A)}
+
+\mbox{\Hypertarget{servo_8h_a2f25ff69829ccce66155141af25392c2}\label{servo_8h_a2f25ff69829ccce66155141af25392c2}} 
+\index{servo.h@{servo.h}!SERVO\_PWM\_UNIT@{SERVO\_PWM\_UNIT}}
+\index{SERVO\_PWM\_UNIT@{SERVO\_PWM\_UNIT}!servo.h@{servo.h}}
+\doxysubsubsection{\texorpdfstring{SERVO\_PWM\_UNIT}{SERVO\_PWM\_UNIT}}
+{\footnotesize\ttfamily \#define SERVO\+\_\+\+PWM\+\_\+\+UNIT~(mcpwm\+\_\+unit\+\_\+t)MCPWM\+\_\+\+UNIT\+\_\+0}
+
+\mbox{\Hypertarget{servo_8h_a5ae00189f7e5d8ce80129f55f066e73d}\label{servo_8h_a5ae00189f7e5d8ce80129f55f066e73d}} 
+\index{servo.h@{servo.h}!SERVO\_TIMER@{SERVO\_TIMER}}
+\index{SERVO\_TIMER@{SERVO\_TIMER}!servo.h@{servo.h}}
+\doxysubsubsection{\texorpdfstring{SERVO\_TIMER}{SERVO\_TIMER}}
+{\footnotesize\ttfamily \#define SERVO\+\_\+\+TIMER~(mcpwm\+\_\+timer\+\_\+t)MCPWM\+\_\+\+TIMER\+\_\+0}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{servo_8h_ab1077fd010eae010c80797b98ad61308}\label{servo_8h_ab1077fd010eae010c80797b98ad61308}} 
+\index{servo.h@{servo.h}!Servo@{Servo}}
+\index{Servo@{Servo}!servo.h@{servo.h}}
+\doxysubsubsection{\texorpdfstring{Servo}{Servo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_servo}{Servo}} \mbox{\hyperlink{struct_servo}{Servo}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{servo_8h_a178a016d3de92d8ddbaa82730cddd9f6}\label{servo_8h_a178a016d3de92d8ddbaa82730cddd9f6}} 
+\index{servo.h@{servo.h}!haltServo@{haltServo}}
+\index{haltServo@{haltServo}!servo.h@{servo.h}}
+\doxysubsubsection{\texorpdfstring{haltServo()}{haltServo()}}
+{\footnotesize\ttfamily void halt\+Servo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_servo}{Servo}} $\ast$}]{servo }\end{DoxyParamCaption})}
+
+
+
+halt\+Servo will stop the timer of the mcpwm 
+
+
+\begin{DoxyParams}{Parameters}
+{\em servo} & pass a \mbox{\hyperlink{struct_servo}{Servo}} motor by reference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{servo_8h_a37c679afc52b5495530ea4c1e6b2e3be}\label{servo_8h_a37c679afc52b5495530ea4c1e6b2e3be}} 
+\index{servo.h@{servo.h}!moveServo@{moveServo}}
+\index{moveServo@{moveServo}!servo.h@{servo.h}}
+\doxysubsubsection{\texorpdfstring{moveServo()}{moveServo()}}
+{\footnotesize\ttfamily void move\+Servo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_servo}{Servo}} $\ast$}]{servo,  }\item[{int}]{angle }\end{DoxyParamCaption})}
+
+
+
+move\+Servo will move the servo motor by angles 
+
+
+\begin{DoxyParams}{Parameters}
+{\em servo} & pass a \mbox{\hyperlink{struct_servo}{Servo}} by reference \\
+\hline
+{\em angle} & int servo angle movment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Rangee for -\/90 to 90 degrees 
+\end{DoxyNote}
+\mbox{\Hypertarget{servo_8h_ae468aed046985a93605f270d01344da9}\label{servo_8h_ae468aed046985a93605f270d01344da9}} 
+\index{servo.h@{servo.h}!servoInit@{servoInit}}
+\index{servoInit@{servoInit}!servo.h@{servo.h}}
+\doxysubsubsection{\texorpdfstring{servoInit()}{servoInit()}}
+{\footnotesize\ttfamily void servo\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_servo}{Servo}} $\ast$}]{servo }\end{DoxyParamCaption})}
+
+
+
+servo\+Init will initialize servo motor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em servo} & pass a \mbox{\hyperlink{struct_servo}{Servo}} motor by reference \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{servo_8h_a10b52acaf4785f8f65cb2e6164d0aeaf}\label{servo_8h_a10b52acaf4785f8f65cb2e6164d0aeaf}} 
+\index{servo.h@{servo.h}!startServo@{startServo}}
+\index{startServo@{startServo}!servo.h@{servo.h}}
+\doxysubsubsection{\texorpdfstring{startServo()}{startServo()}}
+{\footnotesize\ttfamily void start\+Servo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_servo}{Servo}} $\ast$}]{servo }\end{DoxyParamCaption})}
+
+
+
+start\+Servo will start the time of the mcpwm 
+
+
+\begin{DoxyParams}{Parameters}
+{\em servo} & pass a \mbox{\hyperlink{struct_servo}{Servo}} motor by reference \\
+\hline
+\end{DoxyParams}

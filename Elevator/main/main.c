@@ -16,134 +16,146 @@
 // #include "inc/motion_sensor.h"
 #include "inc/button.h"
 #include "inc/serial_communication.h"
+#include "inc/elevator.h"
+#include "inc/HAL_driver.h"
 extern Accelerometer acc;
 extern PressureSensor pressSens;
 // extern MotionSensor hc_sr501;
 extern Servo SG90;
 extern SerialComm externalSerial;
-#define FLOOR_1_LED 0
-#define FLOOR_2_LED 1
-#define FLOOR_3_LED 2
 
-#define FLOOR_1 0
-#define FLOOR_2 1
-#define FLOOR_3 2
+extern Led floorLed[];
+extern Led emergencyLed;
+extern Led arrow[];
+extern Button elevatorButton[];
+extern SerialComm dispatcher;
+extern Button emergencyButton;
+extern Button hc_sr501;
+extern Elevator myElevator;
 
-#define FLOOR_UP 0
-#define FLOOR_DOWN 1
-
-bool MOTION_DETECTED = 0;
-void elevatorButtonInterrupt(void *arg);
-void motionSensorInterrupt(void *arg);
-Led floorLed[] = {
-    {
-        .gpio = 14,
-        .state = LED_OFF,
-    },
-    {
-        .gpio = 27,
-        .state = LED_OFF,
-    },
-    {.gpio = 26,
-     .state = LED_OFF},
-};
-
-Led emergencyLed = {
-    .gpio = 23,
-    .state = LED_OFF,
-};
-
-Led arrow[] = {
-    {
-        .gpio = 13, // up
-        .state = LED_OFF,
-    },
-    {
-        .gpio = 12, // down
-        .state = LED_OFF,
-    },
-};
-
-Button elevatorButton[] = {
-    {
-        .gpio = 4,
-        .pull_sel.down = PULL_SEL_EN,
-        .func = &elevatorButtonInterrupt,
-    },
-    {
-        .gpio = 2,
-        .pull_sel.down = PULL_SEL_EN,
-        .func = &elevatorButtonInterrupt,
-    },
-    {
-        .gpio = 15,
-        .pull_sel.down = PULL_SEL_EN,
-        .func = &elevatorButtonInterrupt,
-    },
-};
-Button emergencyButton = {
-    .gpio = 18,
-    .pull_sel.down = PULL_SEL_EN,
-    .func = &elevatorButtonInterrupt,
-};
-
-#define MOTION_SENSOR_GPIO 39 // motion sensor gpio
-Button hc_sr501 = {
-    .gpio = MOTION_SENSOR_GPIO,
-    .pull_sel.down = PULL_SEL_EN,
-    //.pull_sel.up = PULL_SEL_EN, // uncomment for pullup configuration
-    .func = NULL,
-};
+extern int floorLedSize;
+extern int arrowSize;
+extern int elevatorButtonSize;
 
 QueueHandle_t myQueue;
 
-typedef enum cartState_t
-{
-    IDLE = 0,
-    MOVE = 1,
-    STOP = 2,
-    EMERGENCY = -1,
-}cartState_t;
-
-typedef enum direction_t
-{
-    DOWN = 0,
-    UP = 1,
-    NONE = -1,
-}direction_t;
-typedef enum door_t
-{
-    OPEN = 0,
-    CLOSE = 1,
-}door_t;
-
-typedef struct Elevator
-{
-    uint8_t currFloor;
-    uint8_t destination;
-    door_t door;
-    cartState_t state;
-    cartState_t prevState;
-    direction_t dir;
-} Elevator;
-
-Elevator myElevator = {
-    .currFloor = 1,
-    .destination = 1,
-    .door = CLOSE,
-    .state = IDLE,
-    .prevState = IDLE,
-    .dir = NONE,
+Button dispatcherCallButton[] = {
+    {
+        .gpio = 18,
+        .pull_sel.down = PULL_SEL_EN,
+        .func = NULL,
+    },
+    {
+        .gpio = 18,
+        .pull_sel.down = PULL_SEL_EN,
+        .func = NULL,
+    },
+    {
+        .gpio = 18,
+        .pull_sel.down = PULL_SEL_EN,
+        .func = NULL,
+    },
 };
+int dispatcherCallButtonSize = sizeof(dispatcherCallButton)/sizeof(Button);
 
-#define X_AXIS_THRESH 1000
-#define Y_AXIS_THRESH 2500
-#define Z_AXIS_THRESH 2500
+
+#define CALL_BUTTON_0 0
+#define CALL_BUTTON_1 1
+#define CALL_BUTTON_2 2
+
+QueueHandle_t dispatcherQueue;
+
+void task1(void *pvParameter)
+{
+    while (1)
+    {
+        vTaskDelay(10/portTICK_RATE_MS); //debounce
+        if(buttonRead(&dispatcherCallButton[CALL_BUTTON_0])){
+            xQueueSend(dispatcherQueue,(void *)1, 0);
+        }else if(buttonRead(&dispatcherCallButton[CALL_BUTTON_0])){
+            xQueueSend(dispatcherQueue,(void *)2, 0);
+        }else if(buttonRead(&dispatcherCallButton[CALL_BUTTON_0])){
+            xQueueSend(dispatcherQueue,(void *)3, 0);
+        }else{
+            vTaskDelay(100/portTICK_PERIOD_MS);
+        }
+    }
+}
+
+void task2(void *pvParameter){
+    int data = 0;
+    while(1){
+        if(xQueueReceive(dispatcherQueue,&data, 100)){
+            myElevator.floor_number = data;
+            //update elevator
+            //send semaphore
+        }else{
+            vTaskDelay(100/portTICK_PERIOD_MS);
+        }
+    }
+}
+
+// SemaphoreHandle_t semaphore1, semaphore2;
+// QueueHandle_t queue1;
+
+// void task1(void *pvParameter)
+// {
+
+//     while (1)
+//     {
+//         //    const int uart_num = UART_NUM_2;
+//         uint8_t data[128];
+//         int length = 0;
+//         ESP_ERROR_CHECK(uart_get_buffered_data_len(dispatcher.uart_num, (size_t *)&length));
+//         length = uart_read_bytes(dispatcher.uart_num, data, length, 100);
+//         if (length)
+//         {
+//             // data[length] = 0;
+//             uart_write_bytes(dispatcher.uart_num, data, length);
+//             uart_write_bytes(dispatcher.uart_num, "\r\n", 2);
+
+//             int num = atoi((char *)data); // atoi(data[0]);
+//             if (num)
+//             {
+//                 // myElevator.destination = num;
+//                 // send sempahore
+//                 xQueueSend(queue1, &num, 0);
+//             }
+
+//             // printf("\t\t%d\n", num);
+//         }
+
+//         vTaskDelay(10/portTICK_RATE_MS);
+//     }
+// }
+
+// void task2(void *pvParameter2)
+// {
+//     int data = 0;
+//     while (1)
+//     {
+//         // if (xQueueReceive(queue1, &data, pdMS_TO_TICKS(100)) == pdTRUE)
+//         {
+
+//             myElevator.destination = (uint8_t)data;
+//             xSemaphoreGive(semaphore1); // task3
+//         }
+//         // else
+//         // {
+//         xSemaphoreGive(semaphore2); // task4
+//         vTaskDelay(100 / portTICK_PERIOD_MS);
+//         // }
+
+//         // xSemaphoreTake(semaphore1, portMAX_DELAY);
+//     }
+// }
 
 void task3(void *pvParameter)
 {
     while (1)
     {
+        ///    if (xSemaphoreTake(semaphore1, pdMS_TO_TICKS(100)) == pdTRUE)
+        // {
         switch (myElevator.state)
         {
         case IDLE:
@@ -189,11 +201,12 @@ void task3(void *pvParameter)
                         vTaskDelay(10 / portTICK_RATE_MS);
                     }
                     myElevator.door = CLOSE;
+                    //    xSemaphoreGive(semaphore1);
                 }
             }
             break;
         case MOVE:
-            vTaskDelay(3000 / portTICK_RATE_MS);
+            vTaskDelay(1000 / portTICK_RATE_MS);
             switch (myElevator.dir)
             {
             case UP:
@@ -205,7 +218,7 @@ void task3(void *pvParameter)
                 else
                 {
                     myElevator.currFloor++;
-                    ledAllOff(floorLed, sizeof(floorLed) / sizeof(Led));
+                    ledAllOff(floorLed, floorLedSize);
                     ledOn(&floorLed[myElevator.currFloor - 1]);
                 }
                 break;
@@ -218,7 +231,7 @@ void task3(void *pvParameter)
                 else
                 {
                     myElevator.currFloor--;
-                    ledAllOff(floorLed, sizeof(floorLed) / sizeof(Led));
+                    ledAllOff(floorLed, floorLedSize);
                     ledOn(&floorLed[myElevator.currFloor - 1]);
                 }
                 break;
@@ -254,11 +267,12 @@ void task3(void *pvParameter)
         case EMERGENCY:
             myElevator.prevState = EMERGENCY;
             ledOn(&emergencyLed);
-            printf("911\n");
+            // printf("911\n");
             vTaskDelay(1000 / portTICK_PERIOD_MS); // should send 911 via uart
             break;
         }
         vTaskDelay(100 / portTICK_PERIOD_MS);
+        // }
     }
 }
 
@@ -297,24 +311,28 @@ void task4(void *pvParameter)
     int p = 0;
     while (1)
     {
+        // if (xSemaphoreTake(semaphore2, pdMS_TO_TICKS(100)) == pdTRUE)
+        // {
         x_axis = read_axis(&acc, 0);
         y_axis = read_axis(&acc, 1);
         z_axis = read_axis(&acc, 2);
 
         p = read_pressure_sensor(&pressSens);
 
-        printf("x: %d\ty: %d\tz:%d\tp: %d\n", x_axis, y_axis, z_axis, p);
-        if (x_axis > 1950 || x_axis < 1750 || y_axis > 1950 || y_axis < 1750 || z_axis > Z_AXIS_THRESH || p > PRESSURE_SENSOR_THRESHOLD)
-        {
-            // myElevator.prevState = IDLE;
-            myElevator.state = EMERGENCY;
-            ledOn(&emergencyLed);
-        }
+        // printf("x: %d\ty: %d\tz:%d\tp: %d\n", x_axis, y_axis, z_axis, p);
+        // if (x_axis > 1950 || x_axis < 1750 || y_axis > 1950 || y_axis < 1750 || z_axis > Z_AXIS_THRESH || p > PRESSURE_SENSOR_THRESHOLD)
+        // {
+        //     // myElevator.prevState = IDLE;
+        //     myElevator.state = EMERGENCY;
+        //     ledOn(&emergencyLed);
+        // }
         // else
         // {
         //     ledOff(&emergencyLed);
         // }
         vTaskDelay(500 / portTICK_RATE_MS);
+        // xSemaphoreGive(semaphore2);
+        // }
     }
 }
 
@@ -331,7 +349,7 @@ void task5(void *pvParameter)
         z = read_axis(&acc, 2);
         p = read_pressure_sensor(&pressSens);
         char buffer[256];
-        sprintf(buffer, "Pressure Sensor: %d\r\nX_AXIS: %d\r\nY_AXIS: %d\r\nZ_AXIS: %d\r\n", p,x, y, z);
+        sprintf(buffer, "Pressure Sensor: %d\r\nX_AXIS: %d\r\nY_AXIS: %d\r\nZ_AXIS: %d\r\n", p, x, y, z);
         serial_write(&externalSerial, buffer, 256);
         memset(buffer, 0, sizeof(buffer));
         vTaskDelay(1000 / portTICK_PERIOD_MS);
@@ -341,19 +359,23 @@ void task5(void *pvParameter)
 void app_main(void)
 {
 
-    for (int i = 0; i < sizeof(floorLed) / sizeof(Led); i++)
+    for (int i = 0; i < floorLedSize; i++)
     {
         ledInit(&floorLed[i]);
     }
     ledInit(&emergencyLed);
-    for (int i = 0; i < sizeof(arrow) / sizeof(Led); i++)
+    for (int i = 0; i < arrowSize; i++)
     {
         ledInit(&arrow[i]);
     }
 
     buttonInit(&hc_sr501);
 
-    for (int i = 0; i < sizeof(elevatorButton) / sizeof(Button); i++)
+    for( int i =0; i < dispatcherCallButtonSize; i++){
+        buttonInit(&dispatcherCallButton[i]);
+    }
+
+    for (int i = 0; i < elevatorButtonSize; i++)
     {
         buttonInitIRQ(&elevatorButton[i]);
     }
@@ -367,8 +389,18 @@ void app_main(void)
     ledOn(&floorLed[FLOOR_1]);
     myQueue = xQueueCreate(3, sizeof(uint8_t));
 
-    // xTaskCreate(&task, "task", 2048, NULL, 4, NULL);
-    xTaskCreate(&task3, "task 3", 2048, NULL, 4, NULL);
-    xTaskCreate(&task4, "task 4", 2048, NULL, 5, NULL);
-    xTaskCreate(&task5, "task 5", 2048, NULL, 6, NULL);
+    // queue1 = xQueueCreate(3, sizeof(int));
+    // semaphore1 = xSemaphoreCreateBinary();
+    // semaphore2 = xSemaphoreCreateBinary();
+
+    serialCommInit(&dispatcher);
+
+
+    dispatcherQueue = xQueueCreate(3, sizeof(uint8_t));
+
+    // xTaskCreatePinnedToCore(&task1, "task 1", 2048, NULL, 7, NULL,0);
+    // xTaskCreate(&task2, "task 2", 2048, NULL, 6, NULL);
+    xTaskCreate(&task3, "task 3", 2048, NULL, 5, NULL);
+    xTaskCreate(&task4, "task 4", 2048, NULL, 4, NULL);
+    xTaskCreate(&task5, "task 5", 2048, NULL, 3, NULL);
 }

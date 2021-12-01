@@ -10,15 +10,6 @@
  */
 #include "inc/accelerometer.h"
 
-/* ADXL335 Predefine structure */
-Accelerometer acc = {
-    .width = ACC_ADC_WIDTH,
-    .xaxis = X_AXIS,
-    .yaxis = Y_AXIS,
-    .zaxis = Z_AXIS,
-    .atten = ACC_ADC_ATTEN,
-};
-
 /**
  * @brief ADC initialization for the accelerometer
  * 

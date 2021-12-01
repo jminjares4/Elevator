@@ -1,0 +1,91 @@
+\hypertarget{pressure__sensor_8c}{}\doxysection{main/src/pressure\+\_\+sensor.c File Reference}
+\label{pressure__sensor_8c}\index{main/src/pressure\_sensor.c@{main/src/pressure\_sensor.c}}
+
+
+\mbox{\hyperlink{pressure__sensor_8h}{pressure\+\_\+sensor.\+h}} source code  
+
+
+{\ttfamily \#include \char`\"{}inc/pressure\+\_\+sensor.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{pressure__sensor_8c_ab8a2e1c0996503f1e6ebe60ed58fd58d}{pressure\+Sensor\+Init}} (\mbox{\hyperlink{struct_pressure_sensor}{Pressure\+Sensor}} $\ast$ps)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_pressure_sensor}{Pressure\+Sensor}} initialization for force-\/sensitive sensor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{pressure__sensor_8c_ac653f545bdb31903f6da9df54903913e}{read\+\_\+pressure\+\_\+sensor}} (\mbox{\hyperlink{struct_pressure_sensor}{Pressure\+Sensor}} $\ast$ps)
+\begin{DoxyCompactList}\small\item\em Read channel of the \mbox{\hyperlink{struct_pressure_sensor}{Pressure\+Sensor}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_pressure_sensor}{Pressure\+Sensor}} \mbox{\hyperlink{pressure__sensor_8c_a3aaf8bc9af99b48953204bc58a5d6fb9}{press\+Sens}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{pressure__sensor_8h}{pressure\+\_\+sensor.\+h}} source code 
+
+\begin{DoxyAuthor}{Author}
+Jesus Minjares (\href{https://github.com/jminjares4}{\texttt{ https\+://github.\+com/jminjares4}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/11-\/27
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pressure__sensor_8c_ab8a2e1c0996503f1e6ebe60ed58fd58d}\label{pressure__sensor_8c_ab8a2e1c0996503f1e6ebe60ed58fd58d}} 
+\index{pressure\_sensor.c@{pressure\_sensor.c}!pressureSensorInit@{pressureSensorInit}}
+\index{pressureSensorInit@{pressureSensorInit}!pressure\_sensor.c@{pressure\_sensor.c}}
+\doxysubsubsection{\texorpdfstring{pressureSensorInit()}{pressureSensorInit()}}
+{\footnotesize\ttfamily void pressure\+Sensor\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pressure_sensor}{Pressure\+Sensor}} $\ast$}]{ps }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{struct_pressure_sensor}{Pressure\+Sensor}} initialization for force-\/sensitive sensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ps} & pass a \mbox{\hyperlink{struct_pressure_sensor}{Pressure\+Sensor}} by reference \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pressure__sensor_8c_ac653f545bdb31903f6da9df54903913e}\label{pressure__sensor_8c_ac653f545bdb31903f6da9df54903913e}} 
+\index{pressure\_sensor.c@{pressure\_sensor.c}!read\_pressure\_sensor@{read\_pressure\_sensor}}
+\index{read\_pressure\_sensor@{read\_pressure\_sensor}!pressure\_sensor.c@{pressure\_sensor.c}}
+\doxysubsubsection{\texorpdfstring{read\_pressure\_sensor()}{read\_pressure\_sensor()}}
+{\footnotesize\ttfamily int read\+\_\+pressure\+\_\+sensor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pressure_sensor}{Pressure\+Sensor}} $\ast$}]{ps }\end{DoxyParamCaption})}
+
+
+
+Read channel of the \mbox{\hyperlink{struct_pressure_sensor}{Pressure\+Sensor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ps} & pass a \mbox{\hyperlink{struct_pressure_sensor}{Pressure\+Sensor}} by reference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int adc raw from the sensor 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{pressure__sensor_8c_a3aaf8bc9af99b48953204bc58a5d6fb9}\label{pressure__sensor_8c_a3aaf8bc9af99b48953204bc58a5d6fb9}} 
+\index{pressure\_sensor.c@{pressure\_sensor.c}!pressSens@{pressSens}}
+\index{pressSens@{pressSens}!pressure\_sensor.c@{pressure\_sensor.c}}
+\doxysubsubsection{\texorpdfstring{pressSens}{pressSens}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pressure_sensor}{Pressure\+Sensor}} press\+Sens}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    .width = \mbox{\hyperlink{pressure__sensor_8h_a53d25e7c7376e098771845814a074c56}{PRESSURE\_SENSOR\_ADC\_WIDTH}},}
+\DoxyCodeLine{    .channel = \mbox{\hyperlink{pressure__sensor_8h_a7405d15adf1ae9bb21036a15e6c924d1}{PRESSURE\_SENSOR\_CH}},}
+\DoxyCodeLine{    .atten = \mbox{\hyperlink{pressure__sensor_8h_a224261e37bf28e8821b0364ded621003}{PRESSURE\_SENSOR\_ADC\_ATTEN}},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

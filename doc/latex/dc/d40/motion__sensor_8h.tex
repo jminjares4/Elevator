@@ -1,0 +1,120 @@
+\hypertarget{motion__sensor_8h}{}\doxysection{main/inc/motion\+\_\+sensor.h File Reference}
+\label{motion__sensor_8h}\index{main/inc/motion\_sensor.h@{main/inc/motion\_sensor.h}}
+
+
+Hardware Application Layer for the motion sensor.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}freertos/\+Free\+RTOS.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freertos/task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}driver/gpio.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_motion_sensor}{Motion\+Sensor}}
+\begin{DoxyCompactList}\small\item\em Custom \mbox{\hyperlink{struct_motion_sensor}{Motion\+Sensor}} structure to automate setup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{motion__sensor_8h_af8baf7d9859733667317e58c0ff707d1}{ESP\+\_\+\+INTR\+\_\+\+FLAG\+\_\+\+DEFAULT}}~0
+\item 
+\#define \mbox{\hyperlink{motion__sensor_8h_a6e005eb0bff98757c5accf406ff79638}{MOTION\+\_\+\+SENSOR\+\_\+\+GPIO}}~21
+\item 
+\#define \mbox{\hyperlink{motion__sensor_8h_a5e71ce68bf058b90cbe855f6e71743ef}{PULL\+\_\+\+SEL\+\_\+\+EN}}~1
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_motion_sensor}{Motion\+Sensor}} \mbox{\hyperlink{motion__sensor_8h_aa727a0247c385c8f30eedbfa8c9c041e}{Motion\+Sensor}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{motion__sensor_8h_a246fde66056180314c5ab6d4c32c46ef}{motion\+Sensor\+Init}} (\mbox{\hyperlink{struct_motion_sensor}{Motion\+Sensor}} $\ast$sensor)
+\begin{DoxyCompactList}\small\item\em motion\+Sensor\+Init will intialize motion sensor for interrupt routine \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{motion__sensor_8h_afa321702c8fb6a56fe8865517d418935}{motion\+Sensor\+Interrupt}} (void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em motion\+Sensor\+Interrupt will be an general routine for motion\+Sensor interrupt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Hardware Application Layer for the motion sensor. 
+
+\begin{DoxyAuthor}{Author}
+Jesus Minjares (\href{https://github.com/jminjares4}{\texttt{ https\+://github.\+com/jminjares4}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/11-\/27
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{motion__sensor_8h_af8baf7d9859733667317e58c0ff707d1}\label{motion__sensor_8h_af8baf7d9859733667317e58c0ff707d1}} 
+\index{motion\_sensor.h@{motion\_sensor.h}!ESP\_INTR\_FLAG\_DEFAULT@{ESP\_INTR\_FLAG\_DEFAULT}}
+\index{ESP\_INTR\_FLAG\_DEFAULT@{ESP\_INTR\_FLAG\_DEFAULT}!motion\_sensor.h@{motion\_sensor.h}}
+\doxysubsubsection{\texorpdfstring{ESP\_INTR\_FLAG\_DEFAULT}{ESP\_INTR\_FLAG\_DEFAULT}}
+{\footnotesize\ttfamily \#define ESP\+\_\+\+INTR\+\_\+\+FLAG\+\_\+\+DEFAULT~0}
+
+\mbox{\Hypertarget{motion__sensor_8h_a6e005eb0bff98757c5accf406ff79638}\label{motion__sensor_8h_a6e005eb0bff98757c5accf406ff79638}} 
+\index{motion\_sensor.h@{motion\_sensor.h}!MOTION\_SENSOR\_GPIO@{MOTION\_SENSOR\_GPIO}}
+\index{MOTION\_SENSOR\_GPIO@{MOTION\_SENSOR\_GPIO}!motion\_sensor.h@{motion\_sensor.h}}
+\doxysubsubsection{\texorpdfstring{MOTION\_SENSOR\_GPIO}{MOTION\_SENSOR\_GPIO}}
+{\footnotesize\ttfamily \#define MOTION\+\_\+\+SENSOR\+\_\+\+GPIO~21}
+
+\mbox{\Hypertarget{motion__sensor_8h_a5e71ce68bf058b90cbe855f6e71743ef}\label{motion__sensor_8h_a5e71ce68bf058b90cbe855f6e71743ef}} 
+\index{motion\_sensor.h@{motion\_sensor.h}!PULL\_SEL\_EN@{PULL\_SEL\_EN}}
+\index{PULL\_SEL\_EN@{PULL\_SEL\_EN}!motion\_sensor.h@{motion\_sensor.h}}
+\doxysubsubsection{\texorpdfstring{PULL\_SEL\_EN}{PULL\_SEL\_EN}}
+{\footnotesize\ttfamily \#define PULL\+\_\+\+SEL\+\_\+\+EN~1}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{motion__sensor_8h_aa727a0247c385c8f30eedbfa8c9c041e}\label{motion__sensor_8h_aa727a0247c385c8f30eedbfa8c9c041e}} 
+\index{motion\_sensor.h@{motion\_sensor.h}!MotionSensor@{MotionSensor}}
+\index{MotionSensor@{MotionSensor}!motion\_sensor.h@{motion\_sensor.h}}
+\doxysubsubsection{\texorpdfstring{MotionSensor}{MotionSensor}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_motion_sensor}{Motion\+Sensor}} \mbox{\hyperlink{struct_motion_sensor}{Motion\+Sensor}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{motion__sensor_8h_a246fde66056180314c5ab6d4c32c46ef}\label{motion__sensor_8h_a246fde66056180314c5ab6d4c32c46ef}} 
+\index{motion\_sensor.h@{motion\_sensor.h}!motionSensorInit@{motionSensorInit}}
+\index{motionSensorInit@{motionSensorInit}!motion\_sensor.h@{motion\_sensor.h}}
+\doxysubsubsection{\texorpdfstring{motionSensorInit()}{motionSensorInit()}}
+{\footnotesize\ttfamily void motion\+Sensor\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_motion_sensor}{Motion\+Sensor}} $\ast$}]{sensor }\end{DoxyParamCaption})}
+
+
+
+motion\+Sensor\+Init will intialize motion sensor for interrupt routine 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensor} & pass a \mbox{\hyperlink{struct_motion_sensor}{Motion\+Sensor}} by reference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{motion__sensor_8h_afa321702c8fb6a56fe8865517d418935}\label{motion__sensor_8h_afa321702c8fb6a56fe8865517d418935}} 
+\index{motion\_sensor.h@{motion\_sensor.h}!motionSensorInterrupt@{motionSensorInterrupt}}
+\index{motionSensorInterrupt@{motionSensorInterrupt}!motion\_sensor.h@{motion\_sensor.h}}
+\doxysubsubsection{\texorpdfstring{motionSensorInterrupt()}{motionSensorInterrupt()}}
+{\footnotesize\ttfamily void motion\+Sensor\+Interrupt (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+motion\+Sensor\+Interrupt will be an general routine for motion\+Sensor interrupt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & interrupt argument \\
+\hline
+\end{DoxyParams}

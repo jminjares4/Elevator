@@ -1,0 +1,40 @@
+\hypertarget{servo_8h_source}{}\doxysection{servo.\+h}
+\label{servo_8h_source}\index{main/inc/servo.h@{main/inc/servo.h}}
+\mbox{\hyperlink{servo_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef \_SERVO\_H\_}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define \_SERVO\_H\_}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}freertos/FreeRTOS.h"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}freertos/task.h"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}driver/mcpwm.h"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define SERVO\_PWM\_UNIT (mcpwm\_unit\_t)MCPWM\_UNIT\_0 }\textcolor{comment}{// pwm unit }}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define SERVO\_PWM\_SIGNAL (mcpwm\_io\_signals\_t)(MCPWM0A) }\textcolor{comment}{// pwm signal}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define SERVO\_GPIO 18 }\textcolor{comment}{// servo gpio pin}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define SERVO\_FREQ 50 }\textcolor{comment}{// default frequency for servo}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define SERVO\_TIMER (mcpwm\_timer\_t)MCPWM\_TIMER\_0 }\textcolor{comment}{// default timer}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define SERVO\_MIN\_PULSEWIDTH\_US (1000) }\textcolor{comment}{// min pulse width}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define SERVO\_MAX\_PULSEWIDTH\_US (2000) }\textcolor{comment}{// max pulse width}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define SERVO\_MAX\_DEGREE        (90)   }\textcolor{comment}{//max degree}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{46 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_servo}{Servo}}\{}
+\DoxyCodeLine{47     mcpwm\_timer\_t \mbox{\hyperlink{struct_servo_aeeea912b35dc226ac12338e6b554129b}{timerNum}};  }
+\DoxyCodeLine{48     mcpwm\_unit\_t \mbox{\hyperlink{struct_servo_a35455f9d84ff7a708756a50952798283}{pwmUnit}};  }
+\DoxyCodeLine{49     mcpwm\_io\_signals\_t \mbox{\hyperlink{struct_servo_adf5d5d0d82f2c139906ff523ec1ce78f}{signal}};  }
+\DoxyCodeLine{50     gpio\_num\_t \mbox{\hyperlink{struct_servo_aa9231c84c538c564a9161b4c211bfb7a}{gpio}};  }
+\DoxyCodeLine{51     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_servo_a27a5aa3399b494bcafe69a79d2e5cb5d}{angle}};   }
+\DoxyCodeLine{52 \}\mbox{\hyperlink{servo_8h_ab1077fd010eae010c80797b98ad61308}{Servo}};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{61 \textcolor{keywordtype}{void} \mbox{\hyperlink{servo_8h_a37c679afc52b5495530ea4c1e6b2e3be}{moveServo}}(\mbox{\hyperlink{struct_servo}{Servo}} *servo, \textcolor{keywordtype}{int} angle);}
+\DoxyCodeLine{67 \textcolor{keywordtype}{void} \mbox{\hyperlink{servo_8h_ae468aed046985a93605f270d01344da9}{servoInit}}(\mbox{\hyperlink{struct_servo}{Servo}} *servo);}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{75 \textcolor{keywordtype}{void} \mbox{\hyperlink{servo_8h_a178a016d3de92d8ddbaa82730cddd9f6}{haltServo}}(\mbox{\hyperlink{struct_servo}{Servo}} *servo);}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{82 \textcolor{keywordtype}{void} \mbox{\hyperlink{servo_8h_a10b52acaf4785f8f65cb2e6164d0aeaf}{startServo}}(\mbox{\hyperlink{struct_servo}{Servo}} *servo);}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

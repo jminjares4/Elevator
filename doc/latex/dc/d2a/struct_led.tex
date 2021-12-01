@@ -1,0 +1,57 @@
+\hypertarget{struct_led}{}\doxysection{Led Struct Reference}
+\label{struct_led}\index{Led@{Led}}
+
+
+This is a custom library for easy use of \mbox{\hyperlink{struct_led}{Led}} without the struggle of doing all the hardware intializatio and selection.  
+
+
+
+
+{\ttfamily \#include $<$led.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+gpio\+\_\+num\+\_\+t \mbox{\hyperlink{struct_led_a30d6e1dd0c7ce1324e634e4fe678ef65}{gpio}}
+\item 
+\mbox{\hyperlink{led_8h_aa0aafed44fec19806d8f9ad834be1248}{state\+\_\+t}} \mbox{\hyperlink{struct_led_a5ea9b17def079e3bf2b1465fbc9491ea}{state}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is a custom library for easy use of \mbox{\hyperlink{struct_led}{Led}} without the struggle of doing all the hardware intializatio and selection. 
+
+\mbox{\hyperlink{struct_led}{Led}} struct for any outputs.\hypertarget{struct_led_autotoc_md3}{}\doxyparagraph{Example}\label{struct_led_autotoc_md3}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{typedef} \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{ gpio\_num\_t \mbox{\hyperlink{struct_led_a30d6e1dd0c7ce1324e634e4fe678ef65}{gpio}}; \textcolor{comment}{// gpio pin}}
+\DoxyCodeLine{ \textcolor{keyword}{enum} \mbox{\hyperlink{struct_led_a5ea9b17def079e3bf2b1465fbc9491ea}{state}}; \textcolor{comment}{//state of the led }}
+\DoxyCodeLine{\}\mbox{\hyperlink{struct_led}{Led}};}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+enum \mbox{\hyperlink{led_8h_a248f08a5b3f28dd8c361c64b0f30e8cc}{state\+\_\+t}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{struct_led_a30d6e1dd0c7ce1324e634e4fe678ef65}\label{struct_led_a30d6e1dd0c7ce1324e634e4fe678ef65}} 
+\index{Led@{Led}!gpio@{gpio}}
+\index{gpio@{gpio}!Led@{Led}}
+\doxysubsubsection{\texorpdfstring{gpio}{gpio}}
+{\footnotesize\ttfamily gpio\+\_\+num\+\_\+t Led\+::gpio}
+
+gpio pin \mbox{\Hypertarget{struct_led_a5ea9b17def079e3bf2b1465fbc9491ea}\label{struct_led_a5ea9b17def079e3bf2b1465fbc9491ea}} 
+\index{Led@{Led}!state@{state}}
+\index{state@{state}!Led@{Led}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{led_8h_aa0aafed44fec19806d8f9ad834be1248}{state\+\_\+t}} Led\+::state}
+
+led state 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+main/inc/\mbox{\hyperlink{led_8h}{led.\+h}}\end{DoxyCompactItemize}

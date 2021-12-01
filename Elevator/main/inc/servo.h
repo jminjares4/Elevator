@@ -18,7 +18,7 @@
 
 #define SERVO_PWM_UNIT (mcpwm_unit_t)MCPWM_UNIT_0 // pwm unit 
 #define SERVO_PWM_SIGNAL (mcpwm_io_signals_t)(MCPWM0A) // pwm signal
-#define SERVO_GPIO 25 // servo gpio pin
+#define SERVO_GPIO 14 // servo gpio pin
 #define SERVO_FREQ 50 // default frequency for servo
 #define SERVO_TIMER (mcpwm_timer_t)MCPWM_TIMER_0 // default timer
 

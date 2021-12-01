@@ -1,0 +1,111 @@
+\hypertarget{button_8c}{}\doxysection{main/src/button.c File Reference}
+\label{button_8c}\index{main/src/button.c@{main/src/button.c}}
+
+
+\mbox{\hyperlink{button_8h}{button.\+h}} source code  
+
+
+{\ttfamily \#include \char`\"{}inc/button.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{button_8c_ae59edb3ab775c515504d16a885dba586}{button\+Init}} (\mbox{\hyperlink{struct_button}{Button}} $\ast$button)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_button}{Button}} Initialization for buttons. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{button_8c_afb91fa6bdf8eab2c193f1d67ddb1525f}{button\+Read}} (\mbox{\hyperlink{struct_button}{Button}} $\ast$button)
+\begin{DoxyCompactList}\small\item\em button\+Read will read the gpio pin \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{button_8c_ac8b25fe4429325a4c549f47f596f801d}{button\+Init\+IRQ}} (\mbox{\hyperlink{struct_button}{Button}} $\ast$button)
+\begin{DoxyCompactList}\small\item\em button\+Init\+IRQ will intialize button for interrupt routine \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{button_8c_ae31c467962dd2bc2f7e81d720db15b70}{gpio\+\_\+install\+\_\+count}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{button_8h}{button.\+h}} source code 
+
+\begin{DoxyAuthor}{Author}
+Jesus Minjares (\href{https://github.com/jminjares4}{\texttt{ https\+://github.\+com/jminjares4}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/11-\/27
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{button_8c_ae59edb3ab775c515504d16a885dba586}\label{button_8c_ae59edb3ab775c515504d16a885dba586}} 
+\index{button.c@{button.c}!buttonInit@{buttonInit}}
+\index{buttonInit@{buttonInit}!button.c@{button.c}}
+\doxysubsubsection{\texorpdfstring{buttonInit()}{buttonInit()}}
+{\footnotesize\ttfamily void button\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_button}{Button}} $\ast$}]{button }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{struct_button}{Button}} Initialization for buttons. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & pass a \mbox{\hyperlink{struct_button}{Button}} by reference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+\mbox{\hyperlink{button_8c_ae59edb3ab775c515504d16a885dba586}{button\+Init()}} is use when the button or input will be read as high or low level for interrupt intitialization 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{button_8c_ac8b25fe4429325a4c549f47f596f801d}{button\+Init\+IRQ()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{button_8c_ac8b25fe4429325a4c549f47f596f801d}\label{button_8c_ac8b25fe4429325a4c549f47f596f801d}} 
+\index{button.c@{button.c}!buttonInitIRQ@{buttonInitIRQ}}
+\index{buttonInitIRQ@{buttonInitIRQ}!button.c@{button.c}}
+\doxysubsubsection{\texorpdfstring{buttonInitIRQ()}{buttonInitIRQ()}}
+{\footnotesize\ttfamily void button\+Init\+IRQ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_button}{Button}} $\ast$}]{button }\end{DoxyParamCaption})}
+
+
+
+button\+Init\+IRQ will intialize button for interrupt routine 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & pass a \mbox{\hyperlink{struct_button}{Button}} by referene \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{button_8c_afb91fa6bdf8eab2c193f1d67ddb1525f}\label{button_8c_afb91fa6bdf8eab2c193f1d67ddb1525f}} 
+\index{button.c@{button.c}!buttonRead@{buttonRead}}
+\index{buttonRead@{buttonRead}!button.c@{button.c}}
+\doxysubsubsection{\texorpdfstring{buttonRead()}{buttonRead()}}
+{\footnotesize\ttfamily int button\+Read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_button}{Button}} $\ast$}]{button }\end{DoxyParamCaption})}
+
+
+
+button\+Read will read the gpio pin 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & pass a \mbox{\hyperlink{struct_button}{Button}} by reference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int return either high or low $\vert$$\vert$ 0 or 1 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{button_8c_ae31c467962dd2bc2f7e81d720db15b70}\label{button_8c_ae31c467962dd2bc2f7e81d720db15b70}} 
+\index{button.c@{button.c}!gpio\_install\_count@{gpio\_install\_count}}
+\index{gpio\_install\_count@{gpio\_install\_count}!button.c@{button.c}}
+\doxysubsubsection{\texorpdfstring{gpio\_install\_count}{gpio\_install\_count}}
+{\footnotesize\ttfamily int gpio\+\_\+install\+\_\+count = 0}
+

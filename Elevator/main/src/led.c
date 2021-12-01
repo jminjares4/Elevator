@@ -10,11 +10,6 @@
  */
 #include "inc/led.h"
 
-Led onboard = {
-    .gpio = ONBOARD_LED,
-    .state = LED_OFF,
-};
-
 /**
  * @brief Led initialization for any led
  * 

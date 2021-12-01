@@ -1,0 +1,83 @@
+\hypertarget{motion__sensor_8c}{}\doxysection{main/src/motion\+\_\+sensor.c File Reference}
+\label{motion__sensor_8c}\index{main/src/motion\_sensor.c@{main/src/motion\_sensor.c}}
+
+
+\mbox{\hyperlink{motion__sensor_8h}{motion\+\_\+sensor.\+h}} source code  
+
+
+{\ttfamily \#include \char`\"{}inc/motion\+\_\+sensor.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{motion__sensor_8c_a246fde66056180314c5ab6d4c32c46ef}{motion\+Sensor\+Init}} (\mbox{\hyperlink{struct_motion_sensor}{Motion\+Sensor}} $\ast$sensor)
+\begin{DoxyCompactList}\small\item\em motion\+Sensor\+Init will intialize motion sensor for interrupt routine \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{motion__sensor_8c_a26dc15d6cd1bd365789e64ac2a8de6f5}{motion\+\_\+sensor\+\_\+gpio\+\_\+install\+\_\+count}} = 0
+\item 
+\mbox{\hyperlink{struct_motion_sensor}{Motion\+Sensor}} \mbox{\hyperlink{motion__sensor_8c_ab7eb08955a4f7e16bef2e6481c6a0d10}{hc\+\_\+sr501}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{motion__sensor_8h}{motion\+\_\+sensor.\+h}} source code 
+
+\begin{DoxyAuthor}{Author}
+Jesus Minjares (\href{https://github.com/jminjares4}{\texttt{ https\+://github.\+com/jminjares4}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/11-\/27
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{motion__sensor_8c_a246fde66056180314c5ab6d4c32c46ef}\label{motion__sensor_8c_a246fde66056180314c5ab6d4c32c46ef}} 
+\index{motion\_sensor.c@{motion\_sensor.c}!motionSensorInit@{motionSensorInit}}
+\index{motionSensorInit@{motionSensorInit}!motion\_sensor.c@{motion\_sensor.c}}
+\doxysubsubsection{\texorpdfstring{motionSensorInit()}{motionSensorInit()}}
+{\footnotesize\ttfamily void motion\+Sensor\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_motion_sensor}{Motion\+Sensor}} $\ast$}]{sensor }\end{DoxyParamCaption})}
+
+
+
+motion\+Sensor\+Init will intialize motion sensor for interrupt routine 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensor} & pass a \mbox{\hyperlink{struct_motion_sensor}{Motion\+Sensor}} by reference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{motion__sensor_8c_ab7eb08955a4f7e16bef2e6481c6a0d10}\label{motion__sensor_8c_ab7eb08955a4f7e16bef2e6481c6a0d10}} 
+\index{motion\_sensor.c@{motion\_sensor.c}!hc\_sr501@{hc\_sr501}}
+\index{hc\_sr501@{hc\_sr501}!motion\_sensor.c@{motion\_sensor.c}}
+\doxysubsubsection{\texorpdfstring{hc\_sr501}{hc\_sr501}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_motion_sensor}{Motion\+Sensor}} hc\+\_\+sr501}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    .gpio = \mbox{\hyperlink{motion__sensor_8h_a6e005eb0bff98757c5accf406ff79638}{MOTION\_SENSOR\_GPIO}},}
+\DoxyCodeLine{    .pull\_sel.down = \mbox{\hyperlink{button_8h_a5e71ce68bf058b90cbe855f6e71743ef}{PULL\_SEL\_EN}},}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    .func = \&\mbox{\hyperlink{motion__sensor_8h_afa321702c8fb6a56fe8865517d418935}{motionSensorInterrupt}},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{motion__sensor_8c_a26dc15d6cd1bd365789e64ac2a8de6f5}\label{motion__sensor_8c_a26dc15d6cd1bd365789e64ac2a8de6f5}} 
+\index{motion\_sensor.c@{motion\_sensor.c}!motion\_sensor\_gpio\_install\_count@{motion\_sensor\_gpio\_install\_count}}
+\index{motion\_sensor\_gpio\_install\_count@{motion\_sensor\_gpio\_install\_count}!motion\_sensor.c@{motion\_sensor.c}}
+\doxysubsubsection{\texorpdfstring{motion\_sensor\_gpio\_install\_count}{motion\_sensor\_gpio\_install\_count}}
+{\footnotesize\ttfamily int motion\+\_\+sensor\+\_\+gpio\+\_\+install\+\_\+count = 0}
+

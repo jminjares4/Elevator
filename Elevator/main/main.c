@@ -18,12 +18,11 @@
 #include "inc/serial_communication.h"
 #include "inc/elevator.h"
 #include "inc/HAL_driver.h"
+
 extern Accelerometer acc;
 extern PressureSensor pressSens;
-// extern MotionSensor hc_sr501;
 extern Servo SG90;
 extern SerialComm externalSerial;
-
 extern Led floorLed[];
 extern Led emergencyLed;
 extern Led arrow[];
@@ -32,10 +31,10 @@ extern SerialComm dispatcher;
 extern Button emergencyButton;
 extern Button hc_sr501;
 extern Elevator myElevator;
-
 extern int floorLedSize;
 extern int arrowSize;
 extern int elevatorButtonSize;
+
 
 QueueHandle_t myQueue;
 
@@ -97,58 +96,6 @@ void task2(void *pvParameter){
 
 // SemaphoreHandle_t semaphore1, semaphore2;
 // QueueHandle_t queue1;
-
-// void task1(void *pvParameter)
-// {
-
-//     while (1)
-//     {
-//         //    const int uart_num = UART_NUM_2;
-//         uint8_t data[128];
-//         int length = 0;
-//         ESP_ERROR_CHECK(uart_get_buffered_data_len(dispatcher.uart_num, (size_t *)&length));
-//         length = uart_read_bytes(dispatcher.uart_num, data, length, 100);
-//         if (length)
-//         {
-//             // data[length] = 0;
-//             uart_write_bytes(dispatcher.uart_num, data, length);
-//             uart_write_bytes(dispatcher.uart_num, "\r\n", 2);
-
-//             int num = atoi((char *)data); // atoi(data[0]);
-//             if (num)
-//             {
-//                 // myElevator.destination = num;
-//                 // send sempahore
-//                 xQueueSend(queue1, &num, 0);
-//             }
-
-//             // printf("\t\t%d\n", num);
-//         }
-
-//         vTaskDelay(10/portTICK_RATE_MS);
-//     }
-// }
-
-// void task2(void *pvParameter2)
-// {
-//     int data = 0;
-//     while (1)
-//     {
-//         // if (xQueueReceive(queue1, &data, pdMS_TO_TICKS(100)) == pdTRUE)
-//         {
-
-//             myElevator.destination = (uint8_t)data;
-//             xSemaphoreGive(semaphore1); // task3
-//         }
-//         // else
-//         // {
-//         xSemaphoreGive(semaphore2); // task4
-//         vTaskDelay(100 / portTICK_PERIOD_MS);
-//         // }
-
-//         // xSemaphoreTake(semaphore1, portMAX_DELAY);
-//     }
-// }
 
 void task3(void *pvParameter)
 {
@@ -360,25 +307,21 @@ void app_main(void)
 {
 
     for (int i = 0; i < floorLedSize; i++)
-    {
         ledInit(&floorLed[i]);
-    }
-    ledInit(&emergencyLed);
-    for (int i = 0; i < arrowSize; i++)
-    {
-        ledInit(&arrow[i]);
-    }
 
+    ledInit(&emergencyLed);
+
+    for (int i = 0; i < arrowSize; i++)
+        ledInit(&arrow[i]);
+    
     buttonInit(&hc_sr501);
 
-    for( int i =0; i < dispatcherCallButtonSize; i++){
+    for( int i =0; i < dispatcherCallButtonSize; i++)
         buttonInit(&dispatcherCallButton[i]);
-    }
-
+    
     for (int i = 0; i < elevatorButtonSize; i++)
-    {
         buttonInitIRQ(&elevatorButton[i]);
-    }
+    
     buttonInitIRQ(&emergencyButton);
 
     adcInit(&acc);
@@ -394,7 +337,6 @@ void app_main(void)
     // semaphore2 = xSemaphoreCreateBinary();
 
     serialCommInit(&dispatcher);
-
 
     dispatcherQueue = xQueueCreate(3, sizeof(uint8_t));
 

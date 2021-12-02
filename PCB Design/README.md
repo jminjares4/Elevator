@@ -1,10 +1,7 @@
 # PCB Design
-
+![Schematic_Elevator Project_2021-12-02 (2)](https://user-images.githubusercontent.com/60948298/144516744-2e0abba3-9dce-4b31-8201-84048843467d.png)
 
 ## Schematic
-![Schematic_Elevator Project_2021-12-02](https://user-images.githubusercontent.com/60948298/144401712-28a0a2ea-b4b0-4fd3-987b-188724fb890a.png)
-
-[Schematic_Elevator.Project_2021-12-02.pdf](https://github.com/jminjares4/Elevator/files/7640997/Schematic_Elevator.Project_2021-12-02.jpeg)
 
 ## Elevator PCB 2D front-view
 <img width="517" alt="Screenshot 2021-12-02 052652" src="https://user-images.githubusercontent.com/60948298/144421868-7ab060fd-35ff-4ec9-a8a6-12a2f55ba335.png">

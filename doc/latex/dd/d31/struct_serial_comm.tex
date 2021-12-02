@@ -1,0 +1,115 @@
+\hypertarget{struct_serial_comm}{}\doxysection{Serial\+Comm Struct Reference}
+\label{struct_serial_comm}\index{SerialComm@{SerialComm}}
+
+
+Custom \mbox{\hyperlink{struct_serial_comm}{Serial\+Comm}} structure for UART adaptablity.  
+
+
+
+
+{\ttfamily \#include $<$serial\+\_\+communication.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_serial_comm_aaa4fc990059594ff09965b67ef358a1b}{gpio\+\_\+rx}}
+\item 
+int \mbox{\hyperlink{struct_serial_comm_ac9ad7e668bfe1b23d37fc4d5700c47b9}{gpio\+\_\+tx}}
+\item 
+int \mbox{\hyperlink{struct_serial_comm_a01aabece798118dc34f9deff3a27bed5}{gpio\+\_\+rts}}
+\item 
+int \mbox{\hyperlink{struct_serial_comm_ae8f807d6ba118312c4746415e683460d}{gpio\+\_\+cts}}
+\item 
+uart\+\_\+port\+\_\+t \mbox{\hyperlink{struct_serial_comm_aff55fbdf8bbca991e6c39f126d707082}{uart\+\_\+num}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_serial_comm_a45c77d69d7644e26e5c1c35f678fddd1}{baud\+\_\+rate}}
+\item 
+uart\+\_\+parity\+\_\+t \mbox{\hyperlink{struct_serial_comm_a11f32fc0d1800518d719a10df0be1ebc}{parity}}
+\item 
+uart\+\_\+stop\+\_\+bits\+\_\+t \mbox{\hyperlink{struct_serial_comm_a70e09ff991b4f97e79c369174466e3a0}{stop\+\_\+bits}}
+\item 
+uart\+\_\+word\+\_\+length\+\_\+t \mbox{\hyperlink{struct_serial_comm_a20fd1bc6fbe02d399dcec7af5635a4ec}{data\+\_\+bits}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Custom \mbox{\hyperlink{struct_serial_comm}{Serial\+Comm}} structure for UART adaptablity. 
+
+This structure allows the user to select the UART pins, baud rate, stop bits, parity and data bits \hypertarget{struct_serial_comm_autotoc_md9}{}\doxyparagraph{Example}\label{struct_serial_comm_autotoc_md9}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{typedef} strcut \{}
+\DoxyCodeLine{ \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_serial_comm_aaa4fc990059594ff09965b67ef358a1b}{gpio\_rx}};                 \textcolor{comment}{// RX pin}}
+\DoxyCodeLine{ \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_serial_comm_ac9ad7e668bfe1b23d37fc4d5700c47b9}{gpio\_tx}};                 \textcolor{comment}{// TX pin}}
+\DoxyCodeLine{ \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_serial_comm_a01aabece798118dc34f9deff3a27bed5}{gpio\_rts}};                \textcolor{comment}{// RTS pin}}
+\DoxyCodeLine{ \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_serial_comm_ae8f807d6ba118312c4746415e683460d}{gpio\_cts}};                \textcolor{comment}{// CTS pin}}
+\DoxyCodeLine{ uart\_port\_t \mbox{\hyperlink{struct_serial_comm_aff55fbdf8bbca991e6c39f126d707082}{uart\_num}};        \textcolor{comment}{// UART selection}}
+\DoxyCodeLine{ uint32\_t \mbox{\hyperlink{struct_serial_comm_a45c77d69d7644e26e5c1c35f678fddd1}{baud\_rate}};          \textcolor{comment}{// Baud rate}}
+\DoxyCodeLine{ uart\_parity\_t \mbox{\hyperlink{struct_serial_comm_a11f32fc0d1800518d719a10df0be1ebc}{parity}};        \textcolor{comment}{// Parity selection}}
+\DoxyCodeLine{ uart\_stop\_bits\_t \mbox{\hyperlink{struct_serial_comm_a70e09ff991b4f97e79c369174466e3a0}{stop\_bits}};  \textcolor{comment}{// Stop bits}}
+\DoxyCodeLine{ uart\_word\_length\_T \mbox{\hyperlink{struct_serial_comm_a20fd1bc6fbe02d399dcec7af5635a4ec}{data\_bits}};\textcolor{comment}{// Data bits}}
+\DoxyCodeLine{\}\mbox{\hyperlink{serial__communication_8h_a3411e34e9b1602f935a41368b8ca46ee}{SerialComm}};}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{struct_serial_comm_a45c77d69d7644e26e5c1c35f678fddd1}\label{struct_serial_comm_a45c77d69d7644e26e5c1c35f678fddd1}} 
+\index{SerialComm@{SerialComm}!baud\_rate@{baud\_rate}}
+\index{baud\_rate@{baud\_rate}!SerialComm@{SerialComm}}
+\doxysubsubsection{\texorpdfstring{baud\_rate}{baud\_rate}}
+{\footnotesize\ttfamily uint32\+\_\+t Serial\+Comm\+::baud\+\_\+rate}
+
+baud rate \mbox{\Hypertarget{struct_serial_comm_a20fd1bc6fbe02d399dcec7af5635a4ec}\label{struct_serial_comm_a20fd1bc6fbe02d399dcec7af5635a4ec}} 
+\index{SerialComm@{SerialComm}!data\_bits@{data\_bits}}
+\index{data\_bits@{data\_bits}!SerialComm@{SerialComm}}
+\doxysubsubsection{\texorpdfstring{data\_bits}{data\_bits}}
+{\footnotesize\ttfamily uart\+\_\+word\+\_\+length\+\_\+t Serial\+Comm\+::data\+\_\+bits}
+
+data bits \mbox{\Hypertarget{struct_serial_comm_ae8f807d6ba118312c4746415e683460d}\label{struct_serial_comm_ae8f807d6ba118312c4746415e683460d}} 
+\index{SerialComm@{SerialComm}!gpio\_cts@{gpio\_cts}}
+\index{gpio\_cts@{gpio\_cts}!SerialComm@{SerialComm}}
+\doxysubsubsection{\texorpdfstring{gpio\_cts}{gpio\_cts}}
+{\footnotesize\ttfamily int Serial\+Comm\+::gpio\+\_\+cts}
+
+gpio cts \mbox{\Hypertarget{struct_serial_comm_a01aabece798118dc34f9deff3a27bed5}\label{struct_serial_comm_a01aabece798118dc34f9deff3a27bed5}} 
+\index{SerialComm@{SerialComm}!gpio\_rts@{gpio\_rts}}
+\index{gpio\_rts@{gpio\_rts}!SerialComm@{SerialComm}}
+\doxysubsubsection{\texorpdfstring{gpio\_rts}{gpio\_rts}}
+{\footnotesize\ttfamily int Serial\+Comm\+::gpio\+\_\+rts}
+
+gpio rts \mbox{\Hypertarget{struct_serial_comm_aaa4fc990059594ff09965b67ef358a1b}\label{struct_serial_comm_aaa4fc990059594ff09965b67ef358a1b}} 
+\index{SerialComm@{SerialComm}!gpio\_rx@{gpio\_rx}}
+\index{gpio\_rx@{gpio\_rx}!SerialComm@{SerialComm}}
+\doxysubsubsection{\texorpdfstring{gpio\_rx}{gpio\_rx}}
+{\footnotesize\ttfamily int Serial\+Comm\+::gpio\+\_\+rx}
+
+gpio rx \mbox{\Hypertarget{struct_serial_comm_ac9ad7e668bfe1b23d37fc4d5700c47b9}\label{struct_serial_comm_ac9ad7e668bfe1b23d37fc4d5700c47b9}} 
+\index{SerialComm@{SerialComm}!gpio\_tx@{gpio\_tx}}
+\index{gpio\_tx@{gpio\_tx}!SerialComm@{SerialComm}}
+\doxysubsubsection{\texorpdfstring{gpio\_tx}{gpio\_tx}}
+{\footnotesize\ttfamily int Serial\+Comm\+::gpio\+\_\+tx}
+
+gpio tx \mbox{\Hypertarget{struct_serial_comm_a11f32fc0d1800518d719a10df0be1ebc}\label{struct_serial_comm_a11f32fc0d1800518d719a10df0be1ebc}} 
+\index{SerialComm@{SerialComm}!parity@{parity}}
+\index{parity@{parity}!SerialComm@{SerialComm}}
+\doxysubsubsection{\texorpdfstring{parity}{parity}}
+{\footnotesize\ttfamily uart\+\_\+parity\+\_\+t Serial\+Comm\+::parity}
+
+parity selection \mbox{\Hypertarget{struct_serial_comm_a70e09ff991b4f97e79c369174466e3a0}\label{struct_serial_comm_a70e09ff991b4f97e79c369174466e3a0}} 
+\index{SerialComm@{SerialComm}!stop\_bits@{stop\_bits}}
+\index{stop\_bits@{stop\_bits}!SerialComm@{SerialComm}}
+\doxysubsubsection{\texorpdfstring{stop\_bits}{stop\_bits}}
+{\footnotesize\ttfamily uart\+\_\+stop\+\_\+bits\+\_\+t Serial\+Comm\+::stop\+\_\+bits}
+
+stop bits \mbox{\Hypertarget{struct_serial_comm_aff55fbdf8bbca991e6c39f126d707082}\label{struct_serial_comm_aff55fbdf8bbca991e6c39f126d707082}} 
+\index{SerialComm@{SerialComm}!uart\_num@{uart\_num}}
+\index{uart\_num@{uart\_num}!SerialComm@{SerialComm}}
+\doxysubsubsection{\texorpdfstring{uart\_num}{uart\_num}}
+{\footnotesize\ttfamily uart\+\_\+port\+\_\+t Serial\+Comm\+::uart\+\_\+num}
+
+uart selection 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+main/inc/\mbox{\hyperlink{serial__communication_8h}{serial\+\_\+communication.\+h}}\end{DoxyCompactItemize}

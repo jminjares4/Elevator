@@ -1,0 +1,66 @@
+\hypertarget{serial__communication_8h_source}{}\doxysection{serial\+\_\+communication.\+h}
+\label{serial__communication_8h_source}\index{main/inc/serial\_communication.h@{main/inc/serial\_communication.h}}
+\mbox{\hyperlink{serial__communication_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef \_SERIAL\_COMMUNICATION\_H\_}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define \_SERIAL\_COMMUNICATION\_H\_}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}freertos/FreeRTOS.h"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}freertos/task.h"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}driver/uart.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{// UART 0 Pins}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define UART\_0\_RX 3}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define UART\_0\_TX 1}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{// UART 1 Pins}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define UART\_1\_RX 9}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define UART\_1\_TX 10}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{// UART 2 Pins}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define UART\_2\_TX 17}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define UART\_2\_RX 16}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{// UART Buffer size}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define UART\_BUFFER\_SIZE 1024}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{comment}{// UARTs selection}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define UART\_0 UART\_NUM\_0}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define UART\_1 UART\_NUM\_1}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define UART\_2 UART\_NUM\_2}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{// No pin selection}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define NO\_PIN UART\_PIN\_NO\_CHANGE}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define FIVE\_BITS UART\_DATA\_5\_BITS}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define SIX\_BITS UART\_DATA\_6\_BITS}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define SEVEN\_BITS UART\_DATA\_7\_BITS}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define EIGHT\_BITS UART\_DATA\_8\_BITS}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define ONE\_STOP\_BIT UART\_STOP\_BITS\_1}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define ONE\_HALF\_STOP\_BIT UART\_STOP\_BITS\_1\_5}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define TWO\_STOP\_BIT UART\_STOP\_BITS\_2}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{72 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_serial_comm}{SerialComm}}}
+\DoxyCodeLine{73 \{}
+\DoxyCodeLine{74     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_serial_comm_aaa4fc990059594ff09965b67ef358a1b}{gpio\_rx}};                  }
+\DoxyCodeLine{75     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_serial_comm_ac9ad7e668bfe1b23d37fc4d5700c47b9}{gpio\_tx}};                  }
+\DoxyCodeLine{76     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_serial_comm_a01aabece798118dc34f9deff3a27bed5}{gpio\_rts}};                 }
+\DoxyCodeLine{77     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_serial_comm_ae8f807d6ba118312c4746415e683460d}{gpio\_cts}};                 }
+\DoxyCodeLine{78     uart\_port\_t \mbox{\hyperlink{struct_serial_comm_aff55fbdf8bbca991e6c39f126d707082}{uart\_num}};         }
+\DoxyCodeLine{79     uint32\_t \mbox{\hyperlink{struct_serial_comm_a45c77d69d7644e26e5c1c35f678fddd1}{baud\_rate}};           }
+\DoxyCodeLine{80     uart\_parity\_t \mbox{\hyperlink{struct_serial_comm_a11f32fc0d1800518d719a10df0be1ebc}{parity}};         }
+\DoxyCodeLine{81     uart\_stop\_bits\_t \mbox{\hyperlink{struct_serial_comm_a70e09ff991b4f97e79c369174466e3a0}{stop\_bits}};   }
+\DoxyCodeLine{82     uart\_word\_length\_t \mbox{\hyperlink{struct_serial_comm_a20fd1bc6fbe02d399dcec7af5635a4ec}{data\_bits}}; }
+\DoxyCodeLine{83 \} \mbox{\hyperlink{serial__communication_8h_a3411e34e9b1602f935a41368b8ca46ee}{SerialComm}};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{91 \textcolor{keywordtype}{void} \mbox{\hyperlink{serial__communication_8h_aae47aae2cc2f198b1ae606d48c9acd42}{serialCommInit}}(\mbox{\hyperlink{struct_serial_comm}{SerialComm}} *serial);}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{100 \textcolor{keywordtype}{void} \mbox{\hyperlink{serial__communication_8h_a90b95e5f25d8117b6f02374178c03fa8}{serial\_write}}(\mbox{\hyperlink{struct_serial_comm}{SerialComm}} *serial, \textcolor{keywordtype}{char} *str, \textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

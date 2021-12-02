@@ -6,7 +6,7 @@
 #include "inc/servo.h"
 #include "inc/button.h"
 
-//
+//elevator interrupt
 void elevatorButtonInterrupt(void *arg);
 
 /* ADXL335 setup */
@@ -34,7 +34,7 @@ Led floorLed[] = {
     },
 };
 
-int floorLedSize = 3; // sizeof(floorLed)/sizeof(Led);
+int floorLedSize =  sizeof(floorLed)/sizeof(Led);
 
 /* Emergency setup */
 Led emergencyLed = {
@@ -53,7 +53,7 @@ Led arrow[] = {
         .state = LED_OFF,
     },
 };
-int arrowSize = 2; // sizeof(arrow)/sizeof(Led);
+int arrowSize = sizeof(arrow)/sizeof(Led);
 
 /* Elevator Button setup */
 Button elevatorButton[] = {
@@ -74,7 +74,7 @@ Button elevatorButton[] = {
     },
 };
 
-int elevatorButtonSize = 3; // sizeof(elevatorButton)/sizeof(Button);
+int elevatorButtonSize = sizeof(elevatorButton)/sizeof(Button);
 
 /* Emergency button setup */
 Button emergencyButton = {
@@ -128,4 +128,4 @@ Button dispatcherCallButton[] = {
     },
 };
 
-int dispatcherCallButtonSize = 3; // sizeof(dispatcherCallButton)/sizeof(Button);
+int dispatcherCallButtonSize = sizeof(dispatcherCallButton)/sizeof(Button);

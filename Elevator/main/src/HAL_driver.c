@@ -35,7 +35,7 @@ Led floorLed[] = {
      .state = LED_OFF},
 };
 
-int floorLedSize = sizeof(floorLed)/sizeof(Led);
+int floorLedSize = 3; //sizeof(floorLed)/sizeof(Led);
 
 
 Led emergencyLed = {
@@ -53,7 +53,7 @@ Led arrow[] = {
         .state = LED_OFF,
     },
 };
-int arrowSize = sizeof(arrow)/sizeof(Led);
+int arrowSize = 2; //sizeof(arrow)/sizeof(Led);
 
 Button elevatorButton[] = {
     {
@@ -74,7 +74,7 @@ Button elevatorButton[] = {
 };
 
 
-int elevatorButtonSize = sizeof(elevatorButton)/sizeof(Button);
+int elevatorButtonSize = 3; //sizeof(elevatorButton)/sizeof(Button);
 
 SerialComm dispatcher = {
     .gpio_rx = UART_0_RX,
@@ -136,3 +136,5 @@ Button dispatcherCallButton[] = {
         .func = NULL,
     },
 };
+
+int dispatcherCallButtonSize = 3; //sizeof(dispatcherCallButton)/sizeof(Button);

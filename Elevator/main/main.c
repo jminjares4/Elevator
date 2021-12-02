@@ -35,14 +35,13 @@ extern int floorLedSize;
 extern int arrowSize;
 extern int elevatorButtonSize;
 extern Button dispatcherCallButton[];
-
+extern int dispatcherCallButtonSize;
 SemaphoreHandle_t semaphore1; //, semaphore2;
 // QueueHandle_t queue1;
 
 QueueHandle_t myQueue;
 
 
-int dispatcherCallButtonSize = sizeof(dispatcherCallButton)/sizeof(Button);
 
 
 #define CALL_BUTTON_0 0
@@ -78,11 +77,12 @@ void task2(void *pvParameter){
     uint8_t data = 0;
     while(1){
         if(xQueueReceive(dispatcherQueue,&data, 100)){
-            myElevator.destination = data;
-            myElevator.state = IDLE;
+            printf("Data recieved: %u\n", data);
+            // myElevator.destination = data;
+            // myElevator.state = IDLE;
             //update elevator
             // xSemaphoreGive(semaphore1);
-            xQueueSendToBack(myQueue,(void*)&myQueue, 100);
+            xQueueSendToBack(myQueue,(void*)&data, 100);
             // myQueue
             //send semaphore
         }else{
@@ -331,7 +331,7 @@ void app_main(void)
 
     serialCommInit(&dispatcher);
 
-    dispatcherQueue = xQueueCreate(3, sizeof(uint8_t));
+    dispatcherQueue = xQueueCreate(1, sizeof(uint8_t));
 
     xTaskCreate(&task1, "task 1", 2048, NULL, 7, NULL);
     xTaskCreate(&task2, "task 2", 2048, NULL, 6, NULL);

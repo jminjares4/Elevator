@@ -17,4 +17,9 @@
 #define Y_AXIS_THRESH 2500
 #define Z_AXIS_THRESH 2500
 
+
+#define CALL_BUTTON_0 0
+#define CALL_BUTTON_1 1
+#define CALL_BUTTON_2 2
+
 #endif

@@ -6,14 +6,10 @@
 #include "inc/servo.h"
 #include "inc/button.h"
 
+//
 void elevatorButtonInterrupt(void *arg);
 
-Led onboard = {
-    .gpio = ONBOARD_LED,
-    .state = LED_OFF,
-};
-
-/* ADXL335 Predefine structure */
+/* ADXL335 setup */
 Accelerometer acc = {
     .width = ACC_ADC_WIDTH,
     .xaxis = X_AXIS,
@@ -22,6 +18,7 @@ Accelerometer acc = {
     .atten = ACC_ADC_ATTEN,
 };
 
+/* Elevator floor led setup */
 Led floorLed[] = {
     {
         .gpio = 25,
@@ -31,18 +28,21 @@ Led floorLed[] = {
         .gpio = 26,
         .state = LED_OFF,
     },
-    {.gpio = 27,
-     .state = LED_OFF},
+    {
+        .gpio = 27,
+        .state = LED_OFF
+    },
 };
 
-int floorLedSize = 3; //sizeof(floorLed)/sizeof(Led);
+int floorLedSize = 3; // sizeof(floorLed)/sizeof(Led);
 
-
+/* Emergency setup */
 Led emergencyLed = {
     .gpio = 23,
     .state = LED_OFF,
 };
 
+/* Arrow Led setup */
 Led arrow[] = {
     {
         .gpio = 13, // up
@@ -53,8 +53,9 @@ Led arrow[] = {
         .state = LED_OFF,
     },
 };
-int arrowSize = 2; //sizeof(arrow)/sizeof(Led);
+int arrowSize = 2; // sizeof(arrow)/sizeof(Led);
 
+/* Elevator Button setup */
 Button elevatorButton[] = {
     {
         .gpio = 15,
@@ -73,27 +74,16 @@ Button elevatorButton[] = {
     },
 };
 
+int elevatorButtonSize = 3; // sizeof(elevatorButton)/sizeof(Button);
 
-int elevatorButtonSize = 3; //sizeof(elevatorButton)/sizeof(Button);
-
-SerialComm dispatcher = {
-    .gpio_rx = UART_0_RX,
-    .gpio_tx = UART_0_TX,
-    .gpio_rts = NO_PIN,
-    .gpio_cts = NO_PIN,
-    .uart_num = UART_0,
-    .baud_rate = 115200,
-    .parity = UART_PARITY_DISABLE,
-    .stop_bits = ONE_STOP_BIT,
-    .data_bits = EIGHT_BITS,
-};
-
+/* Emergency button setup */
 Button emergencyButton = {
     .gpio = 5,
     .pull_sel.up = PULL_SEL_EN,
     .func = &elevatorButtonInterrupt,
 };
 
+/* PIR sensor setup */
 Button hc_sr501 = {
     .gpio = 39,
     .pull_sel.down = PULL_SEL_EN,
@@ -101,6 +91,7 @@ Button hc_sr501 = {
     .func = NULL,
 };
 
+/* Elevator setup */
 Elevator myElevator = {
     .currFloor = 1,
     .destination = 1,
@@ -110,15 +101,15 @@ Elevator myElevator = {
     .dir = NONE,
 };
 
-
+/* SG90 setup */
 Servo SG90 = {
     .timerNum = SERVO_TIMER,
     .pwmUnit = SERVO_PWM_UNIT,
     .signal = SERVO_PWM_SIGNAL,
     .gpio = SERVO_GPIO,
-    .angle = 0
-};
+    .angle = 0};
 
+/* Dispatcher Buttons setup */
 Button dispatcherCallButton[] = {
     {
         .gpio = 18,
@@ -137,4 +128,4 @@ Button dispatcherCallButton[] = {
     },
 };
 
-int dispatcherCallButtonSize = 3; //sizeof(dispatcherCallButton)/sizeof(Button);
+int dispatcherCallButtonSize = 3; // sizeof(dispatcherCallButton)/sizeof(Button);

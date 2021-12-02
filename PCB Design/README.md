@@ -14,3 +14,7 @@
 
 ## Elevator PCB 3D back-view
 <img width="567" alt="Elevator 3D pcb2" src="https://user-images.githubusercontent.com/60948298/144402890-a1a37403-e4db-4f10-aba6-b81445a87037.png">
+
+## Author
+* [Jesus Minjares](https://github.com/jminjares4)
+  * Embedded Software Engineer

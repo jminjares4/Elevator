@@ -34,30 +34,14 @@ extern Elevator myElevator;
 extern int floorLedSize;
 extern int arrowSize;
 extern int elevatorButtonSize;
-
+extern Button dispatcherCallButton[];
 
 SemaphoreHandle_t semaphore1; //, semaphore2;
 // QueueHandle_t queue1;
 
 QueueHandle_t myQueue;
 
-Button dispatcherCallButton[] = {
-    {
-        .gpio = 18,
-        .pull_sel.down = PULL_SEL_EN,
-        .func = NULL,
-    },
-    {
-        .gpio = 19,
-        .pull_sel.down = PULL_SEL_EN,
-        .func = NULL,
-    },
-    {
-        .gpio = 21,
-        .pull_sel.down = PULL_SEL_EN,
-        .func = NULL,
-    },
-};
+
 int dispatcherCallButtonSize = sizeof(dispatcherCallButton)/sizeof(Button);
 
 
@@ -85,7 +69,7 @@ void task1(void *pvParameter)
         }else{
             vTaskDelay(100/portTICK_PERIOD_MS);
         }
-        printf("Num: %d\n", num);
+        // printf("Num: %d\n", num);
         num = 0;
     }
 }
@@ -95,8 +79,11 @@ void task2(void *pvParameter){
     while(1){
         if(xQueueReceive(dispatcherQueue,&data, 100)){
             myElevator.destination = data;
+            myElevator.state = IDLE;
             //update elevator
             // xSemaphoreGive(semaphore1);
+            xQueueSendToBack(myQueue,(void*)&myQueue, 100);
+            // myQueue
             //send semaphore
         }else{
             vTaskDelay(100/portTICK_PERIOD_MS);
@@ -157,7 +144,7 @@ void task3(void *pvParameter)
                     myElevator.door = CLOSE;
                     //    xSemaphoreGive(semaphore1);
                 }
-            // }
+            }
             break;
         case MOVE:
             vTaskDelay(1000 / portTICK_RATE_MS);
@@ -227,7 +214,6 @@ void task3(void *pvParameter)
         }
         vTaskDelay(100 / portTICK_PERIOD_MS);
         }
-    }
 }
 
 void elevatorButtonInterrupt(void *arg)

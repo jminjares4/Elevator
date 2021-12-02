@@ -118,3 +118,21 @@ Servo SG90 = {
     .gpio = SERVO_GPIO,
     .angle = 0
 };
+
+Button dispatcherCallButton[] = {
+    {
+        .gpio = 18,
+        .pull_sel.down = PULL_SEL_EN,
+        .func = NULL,
+    },
+    {
+        .gpio = 19,
+        .pull_sel.down = PULL_SEL_EN,
+        .func = NULL,
+    },
+    {
+        .gpio = 21,
+        .pull_sel.down = PULL_SEL_EN,
+        .func = NULL,
+    },
+};

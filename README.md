@@ -24,8 +24,8 @@ Create a elevator controller
 ## Components
 ---
 * [ADXL335](https://www.adafruit.com/product/163)
-* Buttons
-* Leds
+* [Buttons](https://www.amazon.com/6x6x6mm-Momentary-Push-Button-Switch/dp/B01GN79QF8)
+* [Leds](https://www.amazon.com/Assorted-Lighting-Electronics-Components-Emitting/dp/B01CUGAFEC/ref=sr_1_4?keywords=LED%2Bsmd%2B0608&qid=1638487354&s=industrial&sr=1-4&th=1)
 * HC-SR501 PIR sensor
 * Pressure sensor
 * External serial headers

@@ -23,7 +23,7 @@ Create a elevator controller
 ```
 ## Components
 ---
-* ADXL335
+* [ADXL335](https://www.adafruit.com/product/163)
 * Buttons
 * Leds
 * HC-SR501 PIR sensor

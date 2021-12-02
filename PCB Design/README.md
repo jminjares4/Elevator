@@ -17,4 +17,5 @@
 
 ## Author
 * [Jesus Minjares](https://github.com/jminjares4)
+  * Master of Science in Computer Engineering
   * Embedded Software Engineer

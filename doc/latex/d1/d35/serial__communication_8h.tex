@@ -1,0 +1,245 @@
+\hypertarget{serial__communication_8h}{}\doxysection{main/inc/serial\+\_\+communication.h File Reference}
+\label{serial__communication_8h}\index{main/inc/serial\_communication.h@{main/inc/serial\_communication.h}}
+
+
+Hardware Application Layer for Serial Communication.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}freertos/\+Free\+RTOS.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freertos/task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}driver/uart.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_serial_comm}{Serial\+Comm}}
+\begin{DoxyCompactList}\small\item\em Custom \mbox{\hyperlink{struct_serial_comm}{Serial\+Comm}} structure for UART adaptablity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{serial__communication_8h_a8f6a43225d26b0b0d1cc0e42256b0925}{UART\+\_\+0\+\_\+\+RX}}~3
+\item 
+\#define \mbox{\hyperlink{serial__communication_8h_a3e12bde3848408f3a6c97003a8c200e7}{UART\+\_\+0\+\_\+\+TX}}~1
+\item 
+\#define \mbox{\hyperlink{serial__communication_8h_a28c077fc74c3a56440523f476f3da6d6}{UART\+\_\+1\+\_\+\+RX}}~9
+\item 
+\#define \mbox{\hyperlink{serial__communication_8h_afbe96e43ef92e6f14e7f60156629b147}{UART\+\_\+1\+\_\+\+TX}}~10
+\item 
+\#define \mbox{\hyperlink{serial__communication_8h_a414430e55e431af9aeae24f5b913a1e1}{UART\+\_\+2\+\_\+\+TX}}~17
+\item 
+\#define \mbox{\hyperlink{serial__communication_8h_a8c7ee64f1db1a4982f56eda3cb7eea97}{UART\+\_\+2\+\_\+\+RX}}~16
+\item 
+\#define \mbox{\hyperlink{serial__communication_8h_a0d57378e32bf8278011460740bc29f7f}{UART\+\_\+\+BUFFER\+\_\+\+SIZE}}~1024
+\item 
+\#define \mbox{\hyperlink{serial__communication_8h_a8df7ac6593afa170af7861eeb0157345}{UART\+\_\+0}}~UART\+\_\+\+NUM\+\_\+0
+\item 
+\#define \mbox{\hyperlink{serial__communication_8h_acf39c144799b38bdc54e9db980b1b29e}{UART\+\_\+1}}~UART\+\_\+\+NUM\+\_\+1
+\item 
+\#define \mbox{\hyperlink{serial__communication_8h_a298a0541ad4e9b9641f7f620e2b68926}{UART\+\_\+2}}~UART\+\_\+\+NUM\+\_\+2
+\item 
+\#define \mbox{\hyperlink{serial__communication_8h_a4af4244f8a09607e0d6a5d0ee80f1de8}{NO\+\_\+\+PIN}}~UART\+\_\+\+PIN\+\_\+\+NO\+\_\+\+CHANGE
+\item 
+\#define \mbox{\hyperlink{serial__communication_8h_a9c8170363fb22eee02c4b0695810ec16}{FIVE\+\_\+\+BITS}}~UART\+\_\+\+DATA\+\_\+5\+\_\+\+BITS
+\item 
+\#define \mbox{\hyperlink{serial__communication_8h_aa13d7c5cc0b218bc4bb67b9d9ca2a7d2}{SIX\+\_\+\+BITS}}~UART\+\_\+\+DATA\+\_\+6\+\_\+\+BITS
+\item 
+\#define \mbox{\hyperlink{serial__communication_8h_a1e90be04f52d2ea4ddf03185634272ae}{SEVEN\+\_\+\+BITS}}~UART\+\_\+\+DATA\+\_\+7\+\_\+\+BITS
+\item 
+\#define \mbox{\hyperlink{serial__communication_8h_a769ff968ee856ac69da6e8e5ac021ce9}{EIGHT\+\_\+\+BITS}}~UART\+\_\+\+DATA\+\_\+8\+\_\+\+BITS
+\item 
+\#define \mbox{\hyperlink{serial__communication_8h_af3e87ea559179c14de5698dec6810ff1}{ONE\+\_\+\+STOP\+\_\+\+BIT}}~UART\+\_\+\+STOP\+\_\+\+BITS\+\_\+1
+\item 
+\#define \mbox{\hyperlink{serial__communication_8h_ae1bb6194db903c5c09a76cc3d8554ad6}{ONE\+\_\+\+HALF\+\_\+\+STOP\+\_\+\+BIT}}~UART\+\_\+\+STOP\+\_\+\+BITS\+\_\+1\+\_\+5
+\item 
+\#define \mbox{\hyperlink{serial__communication_8h_a05872b1d162a2a616278f61463857f3e}{TWO\+\_\+\+STOP\+\_\+\+BIT}}~UART\+\_\+\+STOP\+\_\+\+BITS\+\_\+2
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_serial_comm}{Serial\+Comm}} \mbox{\hyperlink{serial__communication_8h_a3411e34e9b1602f935a41368b8ca46ee}{Serial\+Comm}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{serial__communication_8h_aae47aae2cc2f198b1ae606d48c9acd42}{serial\+Comm\+Init}} (\mbox{\hyperlink{struct_serial_comm}{Serial\+Comm}} $\ast$serial)
+\begin{DoxyCompactList}\small\item\em serial\+Comm\+Init will intialize external serial communication \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{serial__communication_8h_a90b95e5f25d8117b6f02374178c03fa8}{serial\+\_\+write}} (\mbox{\hyperlink{struct_serial_comm}{Serial\+Comm}} $\ast$serial, char $\ast$str, int size)
+\begin{DoxyCompactList}\small\item\em serial\+\_\+write will write the bytes that will be sent via serial communication \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Hardware Application Layer for Serial Communication. 
+
+\begin{DoxyAuthor}{Author}
+Jesus Minjares (\href{https://github.com/jminjares4}{\texttt{ https\+://github.\+com/jminjares4}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/11-\/27
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{serial__communication_8h_a769ff968ee856ac69da6e8e5ac021ce9}\label{serial__communication_8h_a769ff968ee856ac69da6e8e5ac021ce9}} 
+\index{serial\_communication.h@{serial\_communication.h}!EIGHT\_BITS@{EIGHT\_BITS}}
+\index{EIGHT\_BITS@{EIGHT\_BITS}!serial\_communication.h@{serial\_communication.h}}
+\doxysubsubsection{\texorpdfstring{EIGHT\_BITS}{EIGHT\_BITS}}
+{\footnotesize\ttfamily \#define EIGHT\+\_\+\+BITS~UART\+\_\+\+DATA\+\_\+8\+\_\+\+BITS}
+
+\mbox{\Hypertarget{serial__communication_8h_a9c8170363fb22eee02c4b0695810ec16}\label{serial__communication_8h_a9c8170363fb22eee02c4b0695810ec16}} 
+\index{serial\_communication.h@{serial\_communication.h}!FIVE\_BITS@{FIVE\_BITS}}
+\index{FIVE\_BITS@{FIVE\_BITS}!serial\_communication.h@{serial\_communication.h}}
+\doxysubsubsection{\texorpdfstring{FIVE\_BITS}{FIVE\_BITS}}
+{\footnotesize\ttfamily \#define FIVE\+\_\+\+BITS~UART\+\_\+\+DATA\+\_\+5\+\_\+\+BITS}
+
+\mbox{\Hypertarget{serial__communication_8h_a4af4244f8a09607e0d6a5d0ee80f1de8}\label{serial__communication_8h_a4af4244f8a09607e0d6a5d0ee80f1de8}} 
+\index{serial\_communication.h@{serial\_communication.h}!NO\_PIN@{NO\_PIN}}
+\index{NO\_PIN@{NO\_PIN}!serial\_communication.h@{serial\_communication.h}}
+\doxysubsubsection{\texorpdfstring{NO\_PIN}{NO\_PIN}}
+{\footnotesize\ttfamily \#define NO\+\_\+\+PIN~UART\+\_\+\+PIN\+\_\+\+NO\+\_\+\+CHANGE}
+
+\mbox{\Hypertarget{serial__communication_8h_ae1bb6194db903c5c09a76cc3d8554ad6}\label{serial__communication_8h_ae1bb6194db903c5c09a76cc3d8554ad6}} 
+\index{serial\_communication.h@{serial\_communication.h}!ONE\_HALF\_STOP\_BIT@{ONE\_HALF\_STOP\_BIT}}
+\index{ONE\_HALF\_STOP\_BIT@{ONE\_HALF\_STOP\_BIT}!serial\_communication.h@{serial\_communication.h}}
+\doxysubsubsection{\texorpdfstring{ONE\_HALF\_STOP\_BIT}{ONE\_HALF\_STOP\_BIT}}
+{\footnotesize\ttfamily \#define ONE\+\_\+\+HALF\+\_\+\+STOP\+\_\+\+BIT~UART\+\_\+\+STOP\+\_\+\+BITS\+\_\+1\+\_\+5}
+
+\mbox{\Hypertarget{serial__communication_8h_af3e87ea559179c14de5698dec6810ff1}\label{serial__communication_8h_af3e87ea559179c14de5698dec6810ff1}} 
+\index{serial\_communication.h@{serial\_communication.h}!ONE\_STOP\_BIT@{ONE\_STOP\_BIT}}
+\index{ONE\_STOP\_BIT@{ONE\_STOP\_BIT}!serial\_communication.h@{serial\_communication.h}}
+\doxysubsubsection{\texorpdfstring{ONE\_STOP\_BIT}{ONE\_STOP\_BIT}}
+{\footnotesize\ttfamily \#define ONE\+\_\+\+STOP\+\_\+\+BIT~UART\+\_\+\+STOP\+\_\+\+BITS\+\_\+1}
+
+\mbox{\Hypertarget{serial__communication_8h_a1e90be04f52d2ea4ddf03185634272ae}\label{serial__communication_8h_a1e90be04f52d2ea4ddf03185634272ae}} 
+\index{serial\_communication.h@{serial\_communication.h}!SEVEN\_BITS@{SEVEN\_BITS}}
+\index{SEVEN\_BITS@{SEVEN\_BITS}!serial\_communication.h@{serial\_communication.h}}
+\doxysubsubsection{\texorpdfstring{SEVEN\_BITS}{SEVEN\_BITS}}
+{\footnotesize\ttfamily \#define SEVEN\+\_\+\+BITS~UART\+\_\+\+DATA\+\_\+7\+\_\+\+BITS}
+
+\mbox{\Hypertarget{serial__communication_8h_aa13d7c5cc0b218bc4bb67b9d9ca2a7d2}\label{serial__communication_8h_aa13d7c5cc0b218bc4bb67b9d9ca2a7d2}} 
+\index{serial\_communication.h@{serial\_communication.h}!SIX\_BITS@{SIX\_BITS}}
+\index{SIX\_BITS@{SIX\_BITS}!serial\_communication.h@{serial\_communication.h}}
+\doxysubsubsection{\texorpdfstring{SIX\_BITS}{SIX\_BITS}}
+{\footnotesize\ttfamily \#define SIX\+\_\+\+BITS~UART\+\_\+\+DATA\+\_\+6\+\_\+\+BITS}
+
+\mbox{\Hypertarget{serial__communication_8h_a05872b1d162a2a616278f61463857f3e}\label{serial__communication_8h_a05872b1d162a2a616278f61463857f3e}} 
+\index{serial\_communication.h@{serial\_communication.h}!TWO\_STOP\_BIT@{TWO\_STOP\_BIT}}
+\index{TWO\_STOP\_BIT@{TWO\_STOP\_BIT}!serial\_communication.h@{serial\_communication.h}}
+\doxysubsubsection{\texorpdfstring{TWO\_STOP\_BIT}{TWO\_STOP\_BIT}}
+{\footnotesize\ttfamily \#define TWO\+\_\+\+STOP\+\_\+\+BIT~UART\+\_\+\+STOP\+\_\+\+BITS\+\_\+2}
+
+\mbox{\Hypertarget{serial__communication_8h_a8df7ac6593afa170af7861eeb0157345}\label{serial__communication_8h_a8df7ac6593afa170af7861eeb0157345}} 
+\index{serial\_communication.h@{serial\_communication.h}!UART\_0@{UART\_0}}
+\index{UART\_0@{UART\_0}!serial\_communication.h@{serial\_communication.h}}
+\doxysubsubsection{\texorpdfstring{UART\_0}{UART\_0}}
+{\footnotesize\ttfamily \#define UART\+\_\+0~UART\+\_\+\+NUM\+\_\+0}
+
+\mbox{\Hypertarget{serial__communication_8h_a8f6a43225d26b0b0d1cc0e42256b0925}\label{serial__communication_8h_a8f6a43225d26b0b0d1cc0e42256b0925}} 
+\index{serial\_communication.h@{serial\_communication.h}!UART\_0\_RX@{UART\_0\_RX}}
+\index{UART\_0\_RX@{UART\_0\_RX}!serial\_communication.h@{serial\_communication.h}}
+\doxysubsubsection{\texorpdfstring{UART\_0\_RX}{UART\_0\_RX}}
+{\footnotesize\ttfamily \#define UART\+\_\+0\+\_\+\+RX~3}
+
+\mbox{\Hypertarget{serial__communication_8h_a3e12bde3848408f3a6c97003a8c200e7}\label{serial__communication_8h_a3e12bde3848408f3a6c97003a8c200e7}} 
+\index{serial\_communication.h@{serial\_communication.h}!UART\_0\_TX@{UART\_0\_TX}}
+\index{UART\_0\_TX@{UART\_0\_TX}!serial\_communication.h@{serial\_communication.h}}
+\doxysubsubsection{\texorpdfstring{UART\_0\_TX}{UART\_0\_TX}}
+{\footnotesize\ttfamily \#define UART\+\_\+0\+\_\+\+TX~1}
+
+\mbox{\Hypertarget{serial__communication_8h_acf39c144799b38bdc54e9db980b1b29e}\label{serial__communication_8h_acf39c144799b38bdc54e9db980b1b29e}} 
+\index{serial\_communication.h@{serial\_communication.h}!UART\_1@{UART\_1}}
+\index{UART\_1@{UART\_1}!serial\_communication.h@{serial\_communication.h}}
+\doxysubsubsection{\texorpdfstring{UART\_1}{UART\_1}}
+{\footnotesize\ttfamily \#define UART\+\_\+1~UART\+\_\+\+NUM\+\_\+1}
+
+\mbox{\Hypertarget{serial__communication_8h_a28c077fc74c3a56440523f476f3da6d6}\label{serial__communication_8h_a28c077fc74c3a56440523f476f3da6d6}} 
+\index{serial\_communication.h@{serial\_communication.h}!UART\_1\_RX@{UART\_1\_RX}}
+\index{UART\_1\_RX@{UART\_1\_RX}!serial\_communication.h@{serial\_communication.h}}
+\doxysubsubsection{\texorpdfstring{UART\_1\_RX}{UART\_1\_RX}}
+{\footnotesize\ttfamily \#define UART\+\_\+1\+\_\+\+RX~9}
+
+\mbox{\Hypertarget{serial__communication_8h_afbe96e43ef92e6f14e7f60156629b147}\label{serial__communication_8h_afbe96e43ef92e6f14e7f60156629b147}} 
+\index{serial\_communication.h@{serial\_communication.h}!UART\_1\_TX@{UART\_1\_TX}}
+\index{UART\_1\_TX@{UART\_1\_TX}!serial\_communication.h@{serial\_communication.h}}
+\doxysubsubsection{\texorpdfstring{UART\_1\_TX}{UART\_1\_TX}}
+{\footnotesize\ttfamily \#define UART\+\_\+1\+\_\+\+TX~10}
+
+\mbox{\Hypertarget{serial__communication_8h_a298a0541ad4e9b9641f7f620e2b68926}\label{serial__communication_8h_a298a0541ad4e9b9641f7f620e2b68926}} 
+\index{serial\_communication.h@{serial\_communication.h}!UART\_2@{UART\_2}}
+\index{UART\_2@{UART\_2}!serial\_communication.h@{serial\_communication.h}}
+\doxysubsubsection{\texorpdfstring{UART\_2}{UART\_2}}
+{\footnotesize\ttfamily \#define UART\+\_\+2~UART\+\_\+\+NUM\+\_\+2}
+
+\mbox{\Hypertarget{serial__communication_8h_a8c7ee64f1db1a4982f56eda3cb7eea97}\label{serial__communication_8h_a8c7ee64f1db1a4982f56eda3cb7eea97}} 
+\index{serial\_communication.h@{serial\_communication.h}!UART\_2\_RX@{UART\_2\_RX}}
+\index{UART\_2\_RX@{UART\_2\_RX}!serial\_communication.h@{serial\_communication.h}}
+\doxysubsubsection{\texorpdfstring{UART\_2\_RX}{UART\_2\_RX}}
+{\footnotesize\ttfamily \#define UART\+\_\+2\+\_\+\+RX~16}
+
+\mbox{\Hypertarget{serial__communication_8h_a414430e55e431af9aeae24f5b913a1e1}\label{serial__communication_8h_a414430e55e431af9aeae24f5b913a1e1}} 
+\index{serial\_communication.h@{serial\_communication.h}!UART\_2\_TX@{UART\_2\_TX}}
+\index{UART\_2\_TX@{UART\_2\_TX}!serial\_communication.h@{serial\_communication.h}}
+\doxysubsubsection{\texorpdfstring{UART\_2\_TX}{UART\_2\_TX}}
+{\footnotesize\ttfamily \#define UART\+\_\+2\+\_\+\+TX~17}
+
+\mbox{\Hypertarget{serial__communication_8h_a0d57378e32bf8278011460740bc29f7f}\label{serial__communication_8h_a0d57378e32bf8278011460740bc29f7f}} 
+\index{serial\_communication.h@{serial\_communication.h}!UART\_BUFFER\_SIZE@{UART\_BUFFER\_SIZE}}
+\index{UART\_BUFFER\_SIZE@{UART\_BUFFER\_SIZE}!serial\_communication.h@{serial\_communication.h}}
+\doxysubsubsection{\texorpdfstring{UART\_BUFFER\_SIZE}{UART\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+BUFFER\+\_\+\+SIZE~1024}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{serial__communication_8h_a3411e34e9b1602f935a41368b8ca46ee}\label{serial__communication_8h_a3411e34e9b1602f935a41368b8ca46ee}} 
+\index{serial\_communication.h@{serial\_communication.h}!SerialComm@{SerialComm}}
+\index{SerialComm@{SerialComm}!serial\_communication.h@{serial\_communication.h}}
+\doxysubsubsection{\texorpdfstring{SerialComm}{SerialComm}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_serial_comm}{Serial\+Comm}} \mbox{\hyperlink{struct_serial_comm}{Serial\+Comm}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{serial__communication_8h_a90b95e5f25d8117b6f02374178c03fa8}\label{serial__communication_8h_a90b95e5f25d8117b6f02374178c03fa8}} 
+\index{serial\_communication.h@{serial\_communication.h}!serial\_write@{serial\_write}}
+\index{serial\_write@{serial\_write}!serial\_communication.h@{serial\_communication.h}}
+\doxysubsubsection{\texorpdfstring{serial\_write()}{serial\_write()}}
+{\footnotesize\ttfamily void serial\+\_\+write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_serial_comm}{Serial\+Comm}} $\ast$}]{serial,  }\item[{char $\ast$}]{str,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+serial\+\_\+write will write the bytes that will be sent via serial communication 
+
+
+\begin{DoxyParams}{Parameters}
+{\em serial} & pass a \mbox{\hyperlink{struct_serial_comm}{Serial\+Comm}} by reference \\
+\hline
+{\em str} & string that will be sent via the serial communication \\
+\hline
+{\em size} & length of string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{serial__communication_8h_aae47aae2cc2f198b1ae606d48c9acd42}\label{serial__communication_8h_aae47aae2cc2f198b1ae606d48c9acd42}} 
+\index{serial\_communication.h@{serial\_communication.h}!serialCommInit@{serialCommInit}}
+\index{serialCommInit@{serialCommInit}!serial\_communication.h@{serial\_communication.h}}
+\doxysubsubsection{\texorpdfstring{serialCommInit()}{serialCommInit()}}
+{\footnotesize\ttfamily void serial\+Comm\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_serial_comm}{Serial\+Comm}} $\ast$}]{serial }\end{DoxyParamCaption})}
+
+
+
+serial\+Comm\+Init will intialize external serial communication 
+
+
+\begin{DoxyParams}{Parameters}
+{\em serial} & pass a \mbox{\hyperlink{struct_serial_comm}{Serial\+Comm}} by reference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}

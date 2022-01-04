@@ -1,0 +1,34 @@
+\hypertarget{accelerometer_8h_source}{}\doxysection{accelerometer.\+h}
+\label{accelerometer_8h_source}\index{main/inc/accelerometer.h@{main/inc/accelerometer.h}}
+\mbox{\hyperlink{accelerometer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef \_ACCELEROMETER\_H\_}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define \_ACCELEROMETER\_H\_}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}driver/adc.h"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}freertos/FreeRTOS.h"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}freertos/task.h"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define ACC\_ADC\_WIDTH (adc\_bits\_width\_t)(ADC\_WIDTH\_BIT\_12) }\textcolor{comment}{// ADC width of 12 Bits 2**12 -\/ 1}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define X\_AXIS (adc1\_channel\_t)(ADC1\_CHANNEL\_6) }\textcolor{comment}{//X-\/axis adc channel 6}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define Y\_AXIS (adc1\_channel\_t)(ADC1\_CHANNEL\_7) }\textcolor{comment}{//Y-\/axis adc channel 7}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define Z\_AXIS (adc1\_channel\_t)(ADC1\_CHANNEL\_4) }\textcolor{comment}{//Z-\/axis adc channel 4}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define ACC\_ADC\_ATTEN (adc\_atten\_t)(ADC\_ATTEN\_DB\_11) }\textcolor{comment}{// ADC attenuation set at 11 for range of 2600mV}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{45 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47     adc\_bits\_width\_t \mbox{\hyperlink{struct_accelerometer_a48388f3aa562ad64e2c1201fb7c9ae31}{width}};     }
+\DoxyCodeLine{48     adc1\_channel\_t \mbox{\hyperlink{struct_accelerometer_a4dc3384489b36273938888144cdd89f9}{xaxis}};       }
+\DoxyCodeLine{49     adc1\_channel\_t \mbox{\hyperlink{struct_accelerometer_ab1326b3e9e6bc7a0465fd879b0dfbae3}{yaxis}};       }
+\DoxyCodeLine{50     adc1\_channel\_t \mbox{\hyperlink{struct_accelerometer_a635d79dac1d18d21d722a136d78cbb34}{zaxis}};       }
+\DoxyCodeLine{51     adc\_atten\_t \mbox{\hyperlink{struct_accelerometer_ab6afba93280e70f90ef78f82cb21f0da}{atten}};          }
+\DoxyCodeLine{52 \} \mbox{\hyperlink{struct_accelerometer}{Accelerometer}};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{61 \textcolor{keywordtype}{void} \mbox{\hyperlink{accelerometer_8h_a274683c09cdc487d9458a35a5cc097b4}{adcInit}}(\mbox{\hyperlink{struct_accelerometer}{Accelerometer}} *\mbox{\hyperlink{main_8c_a501f5260eb4c389cf5b37fbd3b10c42f}{acc}});}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{72 \textcolor{keywordtype}{int} \mbox{\hyperlink{accelerometer_8h_a0bd1f7a492353ab4af770b88046f785f}{read\_axis}}(\mbox{\hyperlink{struct_accelerometer}{Accelerometer}} *\mbox{\hyperlink{main_8c_a501f5260eb4c389cf5b37fbd3b10c42f}{acc}}, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

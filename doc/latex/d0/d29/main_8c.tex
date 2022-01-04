@@ -1,0 +1,294 @@
+\hypertarget{main_8c}{}\doxysection{main/main.c File Reference}
+\label{main_8c}\index{main/main.c@{main/main.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}freertos/\+Free\+RTOS.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freertos/task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freertos/queue.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}driver/uart.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}driver/gpio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}driver/adc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sdkconfig.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+log.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}inc/accelerometer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}inc/pressure\+\_\+sensor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}inc/led.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}inc/servo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}inc/button.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}inc/serial\+\_\+communication.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}inc/elevator.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}inc/\+HAL\+\_\+driver.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_a39542ccd929d82b3d70434fc6c03cde9}{task1}} (void $\ast$pv\+Parameter)
+\begin{DoxyCompactList}\small\item\em task1 will run the dispatcher that will send data to task 2 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a8873379ac3ff18bce730e90e44aaf384}{task2}} (void $\ast$pv\+Parameter)
+\begin{DoxyCompactList}\small\item\em task 2 will receive data from task 1 and update the elevator for the FSM to run \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a63f7115038abb6738e97a3f458afc50d}{task3}} (void $\ast$pv\+Parameter)
+\begin{DoxyCompactList}\small\item\em task 3 will run the FSM \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a3eaab948f9af2111e849a12088531b85}{elevator\+Button\+Interrupt}} (void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em elevator\+Button\+Interrupt interrupt routine that will update the elevator floor from the cart \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a25ca99a215fb6d210173ce25b2efb70b}{task4}} (void $\ast$pv\+Parameter)
+\begin{DoxyCompactList}\small\item\em task4 read all the sensors of the elevator \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a0ecf63e3ffd137d37549151fee664e8f}{task5}} (void $\ast$pv\+Parameter)
+\begin{DoxyCompactList}\small\item\em task5 debugging task will print data to UART 2 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a630544a7f0a2cc40d8a7fefab7e2fe70}{app\+\_\+main}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_accelerometer}{Accelerometer}} \mbox{\hyperlink{main_8c_a501f5260eb4c389cf5b37fbd3b10c42f}{acc}}
+\item 
+\mbox{\hyperlink{struct_pressure_sensor}{Pressure\+Sensor}} \mbox{\hyperlink{main_8c_a3aaf8bc9af99b48953204bc58a5d6fb9}{press\+Sens}}
+\item 
+\mbox{\hyperlink{struct_servo}{Servo}} \mbox{\hyperlink{main_8c_a69d1d94e04f5b0ad963f67430e5e6ae1}{SG90}}
+\item 
+\mbox{\hyperlink{struct_serial_comm}{Serial\+Comm}} \mbox{\hyperlink{main_8c_a1a0e3f88b9cb92c92c8dc0efe0143579}{external\+Serial}}
+\item 
+\mbox{\hyperlink{struct_led}{Led}} \mbox{\hyperlink{main_8c_a917148ed0c1c676103960f535145e0eb}{floor\+Led}} \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{struct_led}{Led}} \mbox{\hyperlink{main_8c_a5fe9f20dcaab4fb25d8ba96a91e05d4a}{emergency\+Led}}
+\item 
+\mbox{\hyperlink{struct_led}{Led}} \mbox{\hyperlink{main_8c_a237d60efadb94f5c9c621f3b10d29453}{arrow}} \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{struct_button}{Button}} \mbox{\hyperlink{main_8c_ad2d976608711a514264bb9a352427fe5}{elevator\+Button}} \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{struct_serial_comm}{Serial\+Comm}} \mbox{\hyperlink{main_8c_acfc0634cc412f0b44fe14f37b279d9f9}{dispatcher}}
+\item 
+\mbox{\hyperlink{struct_button}{Button}} \mbox{\hyperlink{main_8c_adabf0432f2db49194e4be7cbd211194b}{emergency\+Button}}
+\item 
+\mbox{\hyperlink{struct_button}{Button}} \mbox{\hyperlink{main_8c_a1340c1a84f8ef441b0b49c00b7665f9c}{hc\+\_\+sr501}}
+\item 
+\mbox{\hyperlink{struct_elevator}{Elevator}} \mbox{\hyperlink{main_8c_aae15ae9d50847de9e10fd3c899f81b17}{my\+Elevator}}
+\item 
+int \mbox{\hyperlink{main_8c_ac878ab976fbc3f7f1c4d15e16c082dab}{floor\+Led\+Size}}
+\item 
+int \mbox{\hyperlink{main_8c_a3d7cade6dbae098feca77b18ed094cd9}{arrow\+Size}}
+\item 
+int \mbox{\hyperlink{main_8c_aebaa6cece8b9db4f1be338105287fa74}{elevator\+Button\+Size}}
+\item 
+\mbox{\hyperlink{struct_button}{Button}} \mbox{\hyperlink{main_8c_abb3a4b79f532909a6dc6d05ea400374d}{dispatcher\+Call\+Button}} \mbox{[}$\,$\mbox{]}
+\item 
+int \mbox{\hyperlink{main_8c_a8396cf5775c5eab8c7a76fd08cea170f}{dispatcher\+Call\+Button\+Size}}
+\item 
+Queue\+Handle\+\_\+t \mbox{\hyperlink{main_8c_a0ec85c17d4b7bcb4113e4ad14a0273d6}{my\+Queue}}
+\item 
+Queue\+Handle\+\_\+t \mbox{\hyperlink{main_8c_a095c91823d16b028f52f40660c2f19ef}{dispatcher\+Queue}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a630544a7f0a2cc40d8a7fefab7e2fe70}\label{main_8c_a630544a7f0a2cc40d8a7fefab7e2fe70}} 
+\index{main.c@{main.c}!app\_main@{app\_main}}
+\index{app\_main@{app\_main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{app\_main()}{app\_main()}}
+{\footnotesize\ttfamily void app\+\_\+main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a3eaab948f9af2111e849a12088531b85}\label{main_8c_a3eaab948f9af2111e849a12088531b85}} 
+\index{main.c@{main.c}!elevatorButtonInterrupt@{elevatorButtonInterrupt}}
+\index{elevatorButtonInterrupt@{elevatorButtonInterrupt}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{elevatorButtonInterrupt()}{elevatorButtonInterrupt()}}
+{\footnotesize\ttfamily void elevator\+Button\+Interrupt (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+elevator\+Button\+Interrupt interrupt routine that will update the elevator floor from the cart 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & arguments pass to the task \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8c_a39542ccd929d82b3d70434fc6c03cde9}\label{main_8c_a39542ccd929d82b3d70434fc6c03cde9}} 
+\index{main.c@{main.c}!task1@{task1}}
+\index{task1@{task1}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{task1()}{task1()}}
+{\footnotesize\ttfamily void task1 (\begin{DoxyParamCaption}\item[{void $\ast$}]{pv\+Parameter }\end{DoxyParamCaption})}
+
+
+
+task1 will run the dispatcher that will send data to task 2 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pv\+Parameter} & arguments pass to the task \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8c_a8873379ac3ff18bce730e90e44aaf384}\label{main_8c_a8873379ac3ff18bce730e90e44aaf384}} 
+\index{main.c@{main.c}!task2@{task2}}
+\index{task2@{task2}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{task2()}{task2()}}
+{\footnotesize\ttfamily void task2 (\begin{DoxyParamCaption}\item[{void $\ast$}]{pv\+Parameter }\end{DoxyParamCaption})}
+
+
+
+task 2 will receive data from task 1 and update the elevator for the FSM to run 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pv\+Parameter} & arguments pass to the task \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8c_a63f7115038abb6738e97a3f458afc50d}\label{main_8c_a63f7115038abb6738e97a3f458afc50d}} 
+\index{main.c@{main.c}!task3@{task3}}
+\index{task3@{task3}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{task3()}{task3()}}
+{\footnotesize\ttfamily void task3 (\begin{DoxyParamCaption}\item[{void $\ast$}]{pv\+Parameter }\end{DoxyParamCaption})}
+
+
+
+task 3 will run the FSM 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pv\+Parameter} & arguments pass to the task \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8c_a25ca99a215fb6d210173ce25b2efb70b}\label{main_8c_a25ca99a215fb6d210173ce25b2efb70b}} 
+\index{main.c@{main.c}!task4@{task4}}
+\index{task4@{task4}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{task4()}{task4()}}
+{\footnotesize\ttfamily void task4 (\begin{DoxyParamCaption}\item[{void $\ast$}]{pv\+Parameter }\end{DoxyParamCaption})}
+
+
+
+task4 read all the sensors of the elevator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pv\+Parameter} & arguments pass to the task \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8c_a0ecf63e3ffd137d37549151fee664e8f}\label{main_8c_a0ecf63e3ffd137d37549151fee664e8f}} 
+\index{main.c@{main.c}!task5@{task5}}
+\index{task5@{task5}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{task5()}{task5()}}
+{\footnotesize\ttfamily void task5 (\begin{DoxyParamCaption}\item[{void $\ast$}]{pv\+Parameter }\end{DoxyParamCaption})}
+
+
+
+task5 debugging task will print data to UART 2 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pv\+Parameter} & arguments pass to the task \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8c_a501f5260eb4c389cf5b37fbd3b10c42f}\label{main_8c_a501f5260eb4c389cf5b37fbd3b10c42f}} 
+\index{main.c@{main.c}!acc@{acc}}
+\index{acc@{acc}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{acc}{acc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_accelerometer}{Accelerometer}} acc\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_a237d60efadb94f5c9c621f3b10d29453}\label{main_8c_a237d60efadb94f5c9c621f3b10d29453}} 
+\index{main.c@{main.c}!arrow@{arrow}}
+\index{arrow@{arrow}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{arrow}{arrow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_led}{Led}} arrow\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_a3d7cade6dbae098feca77b18ed094cd9}\label{main_8c_a3d7cade6dbae098feca77b18ed094cd9}} 
+\index{main.c@{main.c}!arrowSize@{arrowSize}}
+\index{arrowSize@{arrowSize}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{arrowSize}{arrowSize}}
+{\footnotesize\ttfamily int arrow\+Size\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_acfc0634cc412f0b44fe14f37b279d9f9}\label{main_8c_acfc0634cc412f0b44fe14f37b279d9f9}} 
+\index{main.c@{main.c}!dispatcher@{dispatcher}}
+\index{dispatcher@{dispatcher}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{dispatcher}{dispatcher}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_serial_comm}{Serial\+Comm}} dispatcher\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_abb3a4b79f532909a6dc6d05ea400374d}\label{main_8c_abb3a4b79f532909a6dc6d05ea400374d}} 
+\index{main.c@{main.c}!dispatcherCallButton@{dispatcherCallButton}}
+\index{dispatcherCallButton@{dispatcherCallButton}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{dispatcherCallButton}{dispatcherCallButton}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_button}{Button}} dispatcher\+Call\+Button\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_a8396cf5775c5eab8c7a76fd08cea170f}\label{main_8c_a8396cf5775c5eab8c7a76fd08cea170f}} 
+\index{main.c@{main.c}!dispatcherCallButtonSize@{dispatcherCallButtonSize}}
+\index{dispatcherCallButtonSize@{dispatcherCallButtonSize}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{dispatcherCallButtonSize}{dispatcherCallButtonSize}}
+{\footnotesize\ttfamily int dispatcher\+Call\+Button\+Size\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_a095c91823d16b028f52f40660c2f19ef}\label{main_8c_a095c91823d16b028f52f40660c2f19ef}} 
+\index{main.c@{main.c}!dispatcherQueue@{dispatcherQueue}}
+\index{dispatcherQueue@{dispatcherQueue}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{dispatcherQueue}{dispatcherQueue}}
+{\footnotesize\ttfamily Queue\+Handle\+\_\+t dispatcher\+Queue}
+
+\mbox{\Hypertarget{main_8c_ad2d976608711a514264bb9a352427fe5}\label{main_8c_ad2d976608711a514264bb9a352427fe5}} 
+\index{main.c@{main.c}!elevatorButton@{elevatorButton}}
+\index{elevatorButton@{elevatorButton}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{elevatorButton}{elevatorButton}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_button}{Button}} elevator\+Button\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_aebaa6cece8b9db4f1be338105287fa74}\label{main_8c_aebaa6cece8b9db4f1be338105287fa74}} 
+\index{main.c@{main.c}!elevatorButtonSize@{elevatorButtonSize}}
+\index{elevatorButtonSize@{elevatorButtonSize}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{elevatorButtonSize}{elevatorButtonSize}}
+{\footnotesize\ttfamily int elevator\+Button\+Size\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_adabf0432f2db49194e4be7cbd211194b}\label{main_8c_adabf0432f2db49194e4be7cbd211194b}} 
+\index{main.c@{main.c}!emergencyButton@{emergencyButton}}
+\index{emergencyButton@{emergencyButton}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{emergencyButton}{emergencyButton}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_button}{Button}} emergency\+Button\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_a5fe9f20dcaab4fb25d8ba96a91e05d4a}\label{main_8c_a5fe9f20dcaab4fb25d8ba96a91e05d4a}} 
+\index{main.c@{main.c}!emergencyLed@{emergencyLed}}
+\index{emergencyLed@{emergencyLed}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{emergencyLed}{emergencyLed}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_led}{Led}} emergency\+Led\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_a1a0e3f88b9cb92c92c8dc0efe0143579}\label{main_8c_a1a0e3f88b9cb92c92c8dc0efe0143579}} 
+\index{main.c@{main.c}!externalSerial@{externalSerial}}
+\index{externalSerial@{externalSerial}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{externalSerial}{externalSerial}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_serial_comm}{Serial\+Comm}} external\+Serial\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_a917148ed0c1c676103960f535145e0eb}\label{main_8c_a917148ed0c1c676103960f535145e0eb}} 
+\index{main.c@{main.c}!floorLed@{floorLed}}
+\index{floorLed@{floorLed}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{floorLed}{floorLed}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_led}{Led}} floor\+Led\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_ac878ab976fbc3f7f1c4d15e16c082dab}\label{main_8c_ac878ab976fbc3f7f1c4d15e16c082dab}} 
+\index{main.c@{main.c}!floorLedSize@{floorLedSize}}
+\index{floorLedSize@{floorLedSize}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{floorLedSize}{floorLedSize}}
+{\footnotesize\ttfamily int floor\+Led\+Size\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_a1340c1a84f8ef441b0b49c00b7665f9c}\label{main_8c_a1340c1a84f8ef441b0b49c00b7665f9c}} 
+\index{main.c@{main.c}!hc\_sr501@{hc\_sr501}}
+\index{hc\_sr501@{hc\_sr501}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hc\_sr501}{hc\_sr501}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_button}{Button}} hc\+\_\+sr501\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_aae15ae9d50847de9e10fd3c899f81b17}\label{main_8c_aae15ae9d50847de9e10fd3c899f81b17}} 
+\index{main.c@{main.c}!myElevator@{myElevator}}
+\index{myElevator@{myElevator}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{myElevator}{myElevator}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_elevator}{Elevator}} my\+Elevator\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_a0ec85c17d4b7bcb4113e4ad14a0273d6}\label{main_8c_a0ec85c17d4b7bcb4113e4ad14a0273d6}} 
+\index{main.c@{main.c}!myQueue@{myQueue}}
+\index{myQueue@{myQueue}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{myQueue}{myQueue}}
+{\footnotesize\ttfamily Queue\+Handle\+\_\+t my\+Queue}
+
+\mbox{\Hypertarget{main_8c_a3aaf8bc9af99b48953204bc58a5d6fb9}\label{main_8c_a3aaf8bc9af99b48953204bc58a5d6fb9}} 
+\index{main.c@{main.c}!pressSens@{pressSens}}
+\index{pressSens@{pressSens}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{pressSens}{pressSens}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pressure_sensor}{Pressure\+Sensor}} press\+Sens\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_a69d1d94e04f5b0ad963f67430e5e6ae1}\label{main_8c_a69d1d94e04f5b0ad963f67430e5e6ae1}} 
+\index{main.c@{main.c}!SG90@{SG90}}
+\index{SG90@{SG90}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SG90}{SG90}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_servo}{Servo}} SG90\hspace{0.3cm}{\ttfamily [extern]}}
+

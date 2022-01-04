@@ -1,0 +1,284 @@
+\hypertarget{_h_a_l__driver_8c}{}\doxysection{main/src/\+HAL\+\_\+driver.c File Reference}
+\label{_h_a_l__driver_8c}\index{main/src/HAL\_driver.c@{main/src/HAL\_driver.c}}
+{\ttfamily \#include \char`\"{}inc/accelerometer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}inc/elevator.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}inc/led.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}inc/pressure\+\_\+sensor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}inc/serial\+\_\+communication.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}inc/servo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}inc/button.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_h_a_l__driver_8c_a3eaab948f9af2111e849a12088531b85}{elevator\+Button\+Interrupt}} (void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em elevator\+Button\+Interrupt interrupt routine that will update the elevator floor from the cart \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_accelerometer}{Accelerometer}} \mbox{\hyperlink{_h_a_l__driver_8c_a501f5260eb4c389cf5b37fbd3b10c42f}{acc}}
+\item 
+\mbox{\hyperlink{struct_led}{Led}} \mbox{\hyperlink{_h_a_l__driver_8c_a917148ed0c1c676103960f535145e0eb}{floor\+Led}} \mbox{[}$\,$\mbox{]}
+\item 
+int \mbox{\hyperlink{_h_a_l__driver_8c_ac878ab976fbc3f7f1c4d15e16c082dab}{floor\+Led\+Size}} = sizeof(\mbox{\hyperlink{_h_a_l__driver_8c_a917148ed0c1c676103960f535145e0eb}{floor\+Led}})/sizeof(\mbox{\hyperlink{struct_led}{Led}})
+\item 
+\mbox{\hyperlink{struct_led}{Led}} \mbox{\hyperlink{_h_a_l__driver_8c_a5fe9f20dcaab4fb25d8ba96a91e05d4a}{emergency\+Led}}
+\item 
+\mbox{\hyperlink{struct_led}{Led}} \mbox{\hyperlink{_h_a_l__driver_8c_a237d60efadb94f5c9c621f3b10d29453}{arrow}} \mbox{[}$\,$\mbox{]}
+\item 
+int \mbox{\hyperlink{_h_a_l__driver_8c_a3d7cade6dbae098feca77b18ed094cd9}{arrow\+Size}} = sizeof(\mbox{\hyperlink{_h_a_l__driver_8c_a237d60efadb94f5c9c621f3b10d29453}{arrow}})/sizeof(\mbox{\hyperlink{struct_led}{Led}})
+\item 
+\mbox{\hyperlink{struct_button}{Button}} \mbox{\hyperlink{_h_a_l__driver_8c_ad2d976608711a514264bb9a352427fe5}{elevator\+Button}} \mbox{[}$\,$\mbox{]}
+\item 
+int \mbox{\hyperlink{_h_a_l__driver_8c_aebaa6cece8b9db4f1be338105287fa74}{elevator\+Button\+Size}} = sizeof(\mbox{\hyperlink{_h_a_l__driver_8c_ad2d976608711a514264bb9a352427fe5}{elevator\+Button}})/sizeof(\mbox{\hyperlink{struct_button}{Button}})
+\item 
+\mbox{\hyperlink{struct_button}{Button}} \mbox{\hyperlink{_h_a_l__driver_8c_adabf0432f2db49194e4be7cbd211194b}{emergency\+Button}}
+\item 
+\mbox{\hyperlink{struct_button}{Button}} \mbox{\hyperlink{_h_a_l__driver_8c_a1340c1a84f8ef441b0b49c00b7665f9c}{hc\+\_\+sr501}}
+\item 
+\mbox{\hyperlink{struct_elevator}{Elevator}} \mbox{\hyperlink{_h_a_l__driver_8c_aae15ae9d50847de9e10fd3c899f81b17}{my\+Elevator}}
+\item 
+\mbox{\hyperlink{struct_servo}{Servo}} \mbox{\hyperlink{_h_a_l__driver_8c_a69d1d94e04f5b0ad963f67430e5e6ae1}{SG90}}
+\item 
+\mbox{\hyperlink{struct_button}{Button}} \mbox{\hyperlink{_h_a_l__driver_8c_abb3a4b79f532909a6dc6d05ea400374d}{dispatcher\+Call\+Button}} \mbox{[}$\,$\mbox{]}
+\item 
+int \mbox{\hyperlink{_h_a_l__driver_8c_a8396cf5775c5eab8c7a76fd08cea170f}{dispatcher\+Call\+Button\+Size}} = sizeof(\mbox{\hyperlink{_h_a_l__driver_8c_abb3a4b79f532909a6dc6d05ea400374d}{dispatcher\+Call\+Button}})/sizeof(\mbox{\hyperlink{struct_button}{Button}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_h_a_l__driver_8c_a3eaab948f9af2111e849a12088531b85}\label{_h_a_l__driver_8c_a3eaab948f9af2111e849a12088531b85}} 
+\index{HAL\_driver.c@{HAL\_driver.c}!elevatorButtonInterrupt@{elevatorButtonInterrupt}}
+\index{elevatorButtonInterrupt@{elevatorButtonInterrupt}!HAL\_driver.c@{HAL\_driver.c}}
+\doxysubsubsection{\texorpdfstring{elevatorButtonInterrupt()}{elevatorButtonInterrupt()}}
+{\footnotesize\ttfamily void elevator\+Button\+Interrupt (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+elevator\+Button\+Interrupt interrupt routine that will update the elevator floor from the cart 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & arguments pass to the task \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_h_a_l__driver_8c_a501f5260eb4c389cf5b37fbd3b10c42f}\label{_h_a_l__driver_8c_a501f5260eb4c389cf5b37fbd3b10c42f}} 
+\index{HAL\_driver.c@{HAL\_driver.c}!acc@{acc}}
+\index{acc@{acc}!HAL\_driver.c@{HAL\_driver.c}}
+\doxysubsubsection{\texorpdfstring{acc}{acc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_accelerometer}{Accelerometer}} acc}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    .width = \mbox{\hyperlink{accelerometer_8h_a4a6e582ee0720e705143fe9f265bbe2d}{ACC\_ADC\_WIDTH}},}
+\DoxyCodeLine{    .xaxis = \mbox{\hyperlink{accelerometer_8h_a096f6d223bb5d11bebd9ce7535508fa2}{X\_AXIS}},}
+\DoxyCodeLine{    .yaxis = \mbox{\hyperlink{accelerometer_8h_ab9e30cc0a88c208dc662906171bb8265}{Y\_AXIS}},}
+\DoxyCodeLine{    .zaxis = \mbox{\hyperlink{accelerometer_8h_a702b4b323c595211ec77a5995d9ee155}{Z\_AXIS}},}
+\DoxyCodeLine{    .atten = \mbox{\hyperlink{accelerometer_8h_a6bd8067907afce6041ce3dc3647548b2}{ACC\_ADC\_ATTEN}},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_h_a_l__driver_8c_a237d60efadb94f5c9c621f3b10d29453}\label{_h_a_l__driver_8c_a237d60efadb94f5c9c621f3b10d29453}} 
+\index{HAL\_driver.c@{HAL\_driver.c}!arrow@{arrow}}
+\index{arrow@{arrow}!HAL\_driver.c@{HAL\_driver.c}}
+\doxysubsubsection{\texorpdfstring{arrow}{arrow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_led}{Led}} arrow\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        .gpio = 13, }
+\DoxyCodeLine{        .state = \mbox{\hyperlink{led_8h_aa0aafed44fec19806d8f9ad834be1248afc0ca8cc6cbe215fd3f1ae6d40255b40}{LED\_OFF}},}
+\DoxyCodeLine{    \},}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        .gpio = 12, }
+\DoxyCodeLine{        .state = \mbox{\hyperlink{led_8h_aa0aafed44fec19806d8f9ad834be1248afc0ca8cc6cbe215fd3f1ae6d40255b40}{LED\_OFF}},}
+\DoxyCodeLine{    \},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_h_a_l__driver_8c_a3d7cade6dbae098feca77b18ed094cd9}\label{_h_a_l__driver_8c_a3d7cade6dbae098feca77b18ed094cd9}} 
+\index{HAL\_driver.c@{HAL\_driver.c}!arrowSize@{arrowSize}}
+\index{arrowSize@{arrowSize}!HAL\_driver.c@{HAL\_driver.c}}
+\doxysubsubsection{\texorpdfstring{arrowSize}{arrowSize}}
+{\footnotesize\ttfamily int arrow\+Size = sizeof(\mbox{\hyperlink{_h_a_l__driver_8c_a237d60efadb94f5c9c621f3b10d29453}{arrow}})/sizeof(\mbox{\hyperlink{struct_led}{Led}})}
+
+\mbox{\Hypertarget{_h_a_l__driver_8c_abb3a4b79f532909a6dc6d05ea400374d}\label{_h_a_l__driver_8c_abb3a4b79f532909a6dc6d05ea400374d}} 
+\index{HAL\_driver.c@{HAL\_driver.c}!dispatcherCallButton@{dispatcherCallButton}}
+\index{dispatcherCallButton@{dispatcherCallButton}!HAL\_driver.c@{HAL\_driver.c}}
+\doxysubsubsection{\texorpdfstring{dispatcherCallButton}{dispatcherCallButton}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_button}{Button}} dispatcher\+Call\+Button\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        .gpio = 18,}
+\DoxyCodeLine{        .pull\_sel.down = \mbox{\hyperlink{button_8h_a5e71ce68bf058b90cbe855f6e71743ef}{PULL\_SEL\_EN}},}
+\DoxyCodeLine{        .func = NULL,}
+\DoxyCodeLine{    \},}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        .gpio = 19,}
+\DoxyCodeLine{        .pull\_sel.down = \mbox{\hyperlink{button_8h_a5e71ce68bf058b90cbe855f6e71743ef}{PULL\_SEL\_EN}},}
+\DoxyCodeLine{        .func = NULL,}
+\DoxyCodeLine{    \},}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        .gpio = 21,}
+\DoxyCodeLine{        .pull\_sel.down = \mbox{\hyperlink{button_8h_a5e71ce68bf058b90cbe855f6e71743ef}{PULL\_SEL\_EN}},}
+\DoxyCodeLine{        .func = NULL,}
+\DoxyCodeLine{    \},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_h_a_l__driver_8c_a8396cf5775c5eab8c7a76fd08cea170f}\label{_h_a_l__driver_8c_a8396cf5775c5eab8c7a76fd08cea170f}} 
+\index{HAL\_driver.c@{HAL\_driver.c}!dispatcherCallButtonSize@{dispatcherCallButtonSize}}
+\index{dispatcherCallButtonSize@{dispatcherCallButtonSize}!HAL\_driver.c@{HAL\_driver.c}}
+\doxysubsubsection{\texorpdfstring{dispatcherCallButtonSize}{dispatcherCallButtonSize}}
+{\footnotesize\ttfamily int dispatcher\+Call\+Button\+Size = sizeof(\mbox{\hyperlink{_h_a_l__driver_8c_abb3a4b79f532909a6dc6d05ea400374d}{dispatcher\+Call\+Button}})/sizeof(\mbox{\hyperlink{struct_button}{Button}})}
+
+\mbox{\Hypertarget{_h_a_l__driver_8c_ad2d976608711a514264bb9a352427fe5}\label{_h_a_l__driver_8c_ad2d976608711a514264bb9a352427fe5}} 
+\index{HAL\_driver.c@{HAL\_driver.c}!elevatorButton@{elevatorButton}}
+\index{elevatorButton@{elevatorButton}!HAL\_driver.c@{HAL\_driver.c}}
+\doxysubsubsection{\texorpdfstring{elevatorButton}{elevatorButton}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_button}{Button}} elevator\+Button\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        .gpio = 15,}
+\DoxyCodeLine{        .pull\_sel.down = \mbox{\hyperlink{button_8h_a5e71ce68bf058b90cbe855f6e71743ef}{PULL\_SEL\_EN}},}
+\DoxyCodeLine{        .func = \&\mbox{\hyperlink{_h_a_l__driver_8c_a3eaab948f9af2111e849a12088531b85}{elevatorButtonInterrupt}},}
+\DoxyCodeLine{    \},}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        .gpio = 2,}
+\DoxyCodeLine{        .pull\_sel.down = \mbox{\hyperlink{button_8h_a5e71ce68bf058b90cbe855f6e71743ef}{PULL\_SEL\_EN}},}
+\DoxyCodeLine{        .func = \&\mbox{\hyperlink{_h_a_l__driver_8c_a3eaab948f9af2111e849a12088531b85}{elevatorButtonInterrupt}},}
+\DoxyCodeLine{    \},}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        .gpio = 4,}
+\DoxyCodeLine{        .pull\_sel.down = \mbox{\hyperlink{button_8h_a5e71ce68bf058b90cbe855f6e71743ef}{PULL\_SEL\_EN}},}
+\DoxyCodeLine{        .func = \&\mbox{\hyperlink{_h_a_l__driver_8c_a3eaab948f9af2111e849a12088531b85}{elevatorButtonInterrupt}},}
+\DoxyCodeLine{    \},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_h_a_l__driver_8c_aebaa6cece8b9db4f1be338105287fa74}\label{_h_a_l__driver_8c_aebaa6cece8b9db4f1be338105287fa74}} 
+\index{HAL\_driver.c@{HAL\_driver.c}!elevatorButtonSize@{elevatorButtonSize}}
+\index{elevatorButtonSize@{elevatorButtonSize}!HAL\_driver.c@{HAL\_driver.c}}
+\doxysubsubsection{\texorpdfstring{elevatorButtonSize}{elevatorButtonSize}}
+{\footnotesize\ttfamily int elevator\+Button\+Size = sizeof(\mbox{\hyperlink{_h_a_l__driver_8c_ad2d976608711a514264bb9a352427fe5}{elevator\+Button}})/sizeof(\mbox{\hyperlink{struct_button}{Button}})}
+
+\mbox{\Hypertarget{_h_a_l__driver_8c_adabf0432f2db49194e4be7cbd211194b}\label{_h_a_l__driver_8c_adabf0432f2db49194e4be7cbd211194b}} 
+\index{HAL\_driver.c@{HAL\_driver.c}!emergencyButton@{emergencyButton}}
+\index{emergencyButton@{emergencyButton}!HAL\_driver.c@{HAL\_driver.c}}
+\doxysubsubsection{\texorpdfstring{emergencyButton}{emergencyButton}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_button}{Button}} emergency\+Button}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    .gpio = 5,}
+\DoxyCodeLine{    .pull\_sel.up = \mbox{\hyperlink{button_8h_a5e71ce68bf058b90cbe855f6e71743ef}{PULL\_SEL\_EN}},}
+\DoxyCodeLine{    .func = \&\mbox{\hyperlink{_h_a_l__driver_8c_a3eaab948f9af2111e849a12088531b85}{elevatorButtonInterrupt}},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_h_a_l__driver_8c_a5fe9f20dcaab4fb25d8ba96a91e05d4a}\label{_h_a_l__driver_8c_a5fe9f20dcaab4fb25d8ba96a91e05d4a}} 
+\index{HAL\_driver.c@{HAL\_driver.c}!emergencyLed@{emergencyLed}}
+\index{emergencyLed@{emergencyLed}!HAL\_driver.c@{HAL\_driver.c}}
+\doxysubsubsection{\texorpdfstring{emergencyLed}{emergencyLed}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_led}{Led}} emergency\+Led}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    .gpio = 23,}
+\DoxyCodeLine{    .state = \mbox{\hyperlink{led_8h_aa0aafed44fec19806d8f9ad834be1248afc0ca8cc6cbe215fd3f1ae6d40255b40}{LED\_OFF}},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_h_a_l__driver_8c_a917148ed0c1c676103960f535145e0eb}\label{_h_a_l__driver_8c_a917148ed0c1c676103960f535145e0eb}} 
+\index{HAL\_driver.c@{HAL\_driver.c}!floorLed@{floorLed}}
+\index{floorLed@{floorLed}!HAL\_driver.c@{HAL\_driver.c}}
+\doxysubsubsection{\texorpdfstring{floorLed}{floorLed}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_led}{Led}} floor\+Led\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        .gpio = 25,}
+\DoxyCodeLine{        .state = \mbox{\hyperlink{led_8h_aa0aafed44fec19806d8f9ad834be1248afc0ca8cc6cbe215fd3f1ae6d40255b40}{LED\_OFF}},}
+\DoxyCodeLine{    \},}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        .gpio = 26,}
+\DoxyCodeLine{        .state = \mbox{\hyperlink{led_8h_aa0aafed44fec19806d8f9ad834be1248afc0ca8cc6cbe215fd3f1ae6d40255b40}{LED\_OFF}},}
+\DoxyCodeLine{    \},}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        .gpio = 27,}
+\DoxyCodeLine{        .state = \mbox{\hyperlink{led_8h_aa0aafed44fec19806d8f9ad834be1248afc0ca8cc6cbe215fd3f1ae6d40255b40}{LED\_OFF}}}
+\DoxyCodeLine{    \},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_h_a_l__driver_8c_ac878ab976fbc3f7f1c4d15e16c082dab}\label{_h_a_l__driver_8c_ac878ab976fbc3f7f1c4d15e16c082dab}} 
+\index{HAL\_driver.c@{HAL\_driver.c}!floorLedSize@{floorLedSize}}
+\index{floorLedSize@{floorLedSize}!HAL\_driver.c@{HAL\_driver.c}}
+\doxysubsubsection{\texorpdfstring{floorLedSize}{floorLedSize}}
+{\footnotesize\ttfamily int floor\+Led\+Size = sizeof(\mbox{\hyperlink{_h_a_l__driver_8c_a917148ed0c1c676103960f535145e0eb}{floor\+Led}})/sizeof(\mbox{\hyperlink{struct_led}{Led}})}
+
+\mbox{\Hypertarget{_h_a_l__driver_8c_a1340c1a84f8ef441b0b49c00b7665f9c}\label{_h_a_l__driver_8c_a1340c1a84f8ef441b0b49c00b7665f9c}} 
+\index{HAL\_driver.c@{HAL\_driver.c}!hc\_sr501@{hc\_sr501}}
+\index{hc\_sr501@{hc\_sr501}!HAL\_driver.c@{HAL\_driver.c}}
+\doxysubsubsection{\texorpdfstring{hc\_sr501}{hc\_sr501}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_button}{Button}} hc\+\_\+sr501}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    .gpio = 39,}
+\DoxyCodeLine{    .pull\_sel.down = \mbox{\hyperlink{button_8h_a5e71ce68bf058b90cbe855f6e71743ef}{PULL\_SEL\_EN}},}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    .func = NULL,}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_h_a_l__driver_8c_aae15ae9d50847de9e10fd3c899f81b17}\label{_h_a_l__driver_8c_aae15ae9d50847de9e10fd3c899f81b17}} 
+\index{HAL\_driver.c@{HAL\_driver.c}!myElevator@{myElevator}}
+\index{myElevator@{myElevator}!HAL\_driver.c@{HAL\_driver.c}}
+\doxysubsubsection{\texorpdfstring{myElevator}{myElevator}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_elevator}{Elevator}} my\+Elevator}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    .currFloor = 1,}
+\DoxyCodeLine{    .destination = 1,}
+\DoxyCodeLine{    .door = \mbox{\hyperlink{elevator_8h_ae7a79e88d2ac852778ad0240f9073044a685f73194ad125cbc784c3210cdb3449}{CLOSE}},}
+\DoxyCodeLine{    .state = \mbox{\hyperlink{elevator_8h_a3fe88b5597d878e4fc8b0322ce7a075eafd6a0e4343048b10646dd2976cc5ad18}{IDLE}},}
+\DoxyCodeLine{    .prevState = \mbox{\hyperlink{elevator_8h_a3fe88b5597d878e4fc8b0322ce7a075eafd6a0e4343048b10646dd2976cc5ad18}{IDLE}},}
+\DoxyCodeLine{    .dir = \mbox{\hyperlink{elevator_8h_ae9ae980041e438eed7a3af43ce4e9f6bac157bdf0b85a40d2619cbc8bc1ae5fe2}{NONE}},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_h_a_l__driver_8c_a69d1d94e04f5b0ad963f67430e5e6ae1}\label{_h_a_l__driver_8c_a69d1d94e04f5b0ad963f67430e5e6ae1}} 
+\index{HAL\_driver.c@{HAL\_driver.c}!SG90@{SG90}}
+\index{SG90@{SG90}!HAL\_driver.c@{HAL\_driver.c}}
+\doxysubsubsection{\texorpdfstring{SG90}{SG90}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_servo}{Servo}} SG90}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    .timerNum = \mbox{\hyperlink{servo_8h_a5ae00189f7e5d8ce80129f55f066e73d}{SERVO\_TIMER}},}
+\DoxyCodeLine{    .pwmUnit = \mbox{\hyperlink{servo_8h_a2f25ff69829ccce66155141af25392c2}{SERVO\_PWM\_UNIT}},}
+\DoxyCodeLine{    .signal = \mbox{\hyperlink{servo_8h_a2b58979fa339f2cae758da3f07bef936}{SERVO\_PWM\_SIGNAL}},}
+\DoxyCodeLine{    .gpio = \mbox{\hyperlink{servo_8h_a3d62c2d0eb44f28e242392b43ff958b3}{SERVO\_GPIO}},}
+\DoxyCodeLine{    .angle = 0\}}
+
+\end{DoxyCode}

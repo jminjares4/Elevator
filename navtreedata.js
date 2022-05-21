@@ -29,39 +29,20 @@ var NAVTREE =
       [ "Status", "index.html#autotoc_md9", null ],
       [ "## Components", "index.html#autotoc_md10", null ],
       [ "<strong>Hardware</strong>", "index.html#autotoc_md11", null ],
-      [ "<strong>Doxygen</strong>", "index.html#autotoc_md12", null ],
-      [ "<strong>Development</strong>", "index.html#autotoc_md13", null ],
-      [ "<strong>License</strong>", "index.html#autotoc_md14", null ],
+      [ "Doxygen", "index.html#autotoc_md12", null ],
+      [ "Development", "index.html#autotoc_md13", null ],
+      [ "License", "index.html#autotoc_md14", null ],
       [ "Author:", "index.html#autotoc_md15", null ]
     ] ],
     [ "PCB Design", "dd/dcf/md_doc_pages_hardware.html", [
-      [ "<strong>Elevator Breadboard</strong>", "dd/dcf/md_doc_pages_hardware.html#autotoc_md1", null ],
+      [ "Elevator Breadboard", "dd/dcf/md_doc_pages_hardware.html#autotoc_md1", null ],
       [ "Schematic", "dd/dcf/md_doc_pages_hardware.html#autotoc_md2", null ],
       [ "Elevator PCB 2D front-view", "dd/dcf/md_doc_pages_hardware.html#autotoc_md3", null ],
       [ "Elevator PCB 3D front-view", "dd/dcf/md_doc_pages_hardware.html#autotoc_md4", null ],
       [ "Elevator PCB 3D back-view", "dd/dcf/md_doc_pages_hardware.html#autotoc_md5", [
-        [ "<strong>Electronic Design Automation</strong>", "dd/dcf/md_doc_pages_hardware.html#autotoc_md6", null ]
+        [ "Electronic Design Automation", "dd/dcf/md_doc_pages_hardware.html#autotoc_md6", null ]
       ] ],
       [ "Author", "dd/dcf/md_doc_pages_hardware.html#autotoc_md7", null ]
-    ] ],
-    [ "PCB Design", "df/d3f/md_hardware__r_e_a_d_m_e.html", [
-      [ "<strong>Elevator Breadboard</strong>", "df/d3f/md_hardware__r_e_a_d_m_e.html#autotoc_md28", null ],
-      [ "Schematic", "df/d3f/md_hardware__r_e_a_d_m_e.html#autotoc_md29", null ],
-      [ "Elevator PCB 2D front-view", "df/d3f/md_hardware__r_e_a_d_m_e.html#autotoc_md30", null ],
-      [ "Elevator PCB 3D front-view", "df/d3f/md_hardware__r_e_a_d_m_e.html#autotoc_md31", null ],
-      [ "Elevator PCB 3D back-view", "df/d3f/md_hardware__r_e_a_d_m_e.html#autotoc_md32", [
-        [ "<strong>Electronic Design Automation</strong>", "df/d3f/md_hardware__r_e_a_d_m_e.html#autotoc_md33", null ]
-      ] ],
-      [ "Author", "df/d3f/md_hardware__r_e_a_d_m_e.html#autotoc_md34", null ]
-    ] ],
-    [ "Elevator Final Project", "d3/dcc/md__r_e_a_d_m_e.html", [
-      [ "Status", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md36", null ],
-      [ "## Components", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md37", null ],
-      [ "<strong>Hardware</strong>", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md38", null ],
-      [ "<strong>Doxygen</strong>", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md39", null ],
-      [ "<strong>Development</strong>", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md40", null ],
-      [ "<strong>License</strong>", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md41", null ],
-      [ "Author:", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md42", null ]
     ] ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
@@ -89,7 +70,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"dir_0b6f4d1aa766690a3b5c9958e1f98cfd.html"
+"index.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

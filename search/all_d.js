@@ -1,7 +1,7 @@
 var searchData=
 [
   ['parity_0',['parity',['../dd/d31/struct_serial_comm.html#a11f32fc0d1800518d719a10df0be1ebc',1,'SerialComm']]],
-  ['pcb_20design_1',['PCB Design',['../dd/dcf/md_doc_pages_hardware.html',1,'(Global Namespace)'],['../df/d3f/md_hardware__r_e_a_d_m_e.html',1,'(Global Namespace)']]],
+  ['pcb_20design_1',['PCB Design',['../dd/dcf/md_doc_pages_hardware.html',1,'']]],
   ['presssens_2',['pressSens',['../da/d12/pressure__sensor_8c.html#a3aaf8bc9af99b48953204bc58a5d6fb9',1,'pressSens():&#160;pressure_sensor.c'],['../d0/d29/main_8c.html#a3aaf8bc9af99b48953204bc58a5d6fb9',1,'pressSens():&#160;pressure_sensor.c']]],
   ['pressure_5fsensor_2ec_3',['pressure_sensor.c',['../da/d12/pressure__sensor_8c.html',1,'']]],
   ['pressure_5fsensor_2eh_4',['pressure_sensor.h',['../de/d45/pressure__sensor_8h.html',1,'']]],

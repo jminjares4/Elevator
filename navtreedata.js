@@ -27,8 +27,8 @@ var NAVTREE =
   [ "Microprocessor 2", "index.html", [
     [ "Elevator Final Project", "index.html", [
       [ "Status", "index.html#autotoc_md9", null ],
-      [ "## Components", "index.html#autotoc_md10", null ],
-      [ "**Hardware", "index.html#autotoc_md11", null ],
+      [ "Components", "index.html#autotoc_md10", null ],
+      [ "Hardware", "index.html#autotoc_md11", null ],
       [ "Doxygen", "index.html#autotoc_md12", null ],
       [ "Development", "index.html#autotoc_md13", null ],
       [ "License", "index.html#autotoc_md14", null ],

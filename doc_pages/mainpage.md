@@ -32,7 +32,7 @@
 * [Servo SG90 motors](https://www.amazon.com/Micro-Servos-Helicopter-Airplane-Controls/dp/B07MLR1498/ref=sr_1_1_sspa?keywords=SG90&qid=1638487991&sr=8-1-spons&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzRjRJWkkzMDFVMU45JmVuY3J5cHRlZElkPUEwODg1OTc2M0lBNjZSVzNFNUpPOSZlbmNyeXB0ZWRBZElkPUEwNjU4NjQ2MlVBWjVRWlZaM1A5VCZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU&th=1)
 
 ## Hardware
-<img src="img/schematic.png">
+<img src="images/schematic.png">
 
 ## Development
 | **Elevator** | **Hardware/Software**|

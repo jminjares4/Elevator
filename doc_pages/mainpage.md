@@ -3,7 +3,7 @@
 ## Status
 [![Doxygen Action](https://github.com/jminjares4/Elevator/actions/workflows/main.yml/badge.svg)](https://github.com/jminjares4/Elevator/actions/workflows/main.yml) [![pages-build-deployment](https://github.com/jminjares4/Elevator/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/jminjares4/Elevator/actions/workflows/pages/pages-build-deployment)
 
-  The project consists of an **Elevator Controller Unit (ECU)** for *Microprocessor 2* final project. **ECU** microcontroller (MCU) was `Espressif ESP32` running [FreeRTOS](https://www.freertos.org). The firmware has a custom `hardware application layer` ***(HAL)*** to avoid using Espressif API with a more approachable interface. Here is the list of all the files.
+  The project consists of an Elevator Controller Unit (ECU)** for *Microprocessor 2* final project. **ECU** microcontroller (MCU) was `Espressif ESP32` running [FreeRTOS](https://www.freertos.org). The firmware has a custom `hardware application layer` ***(HAL)*** to avoid using Espressif API with a more approachable interface. Here is the list of all the files.
 ```
 ├── main
 ├── inc
@@ -34,7 +34,7 @@
 * [Pressure sensor](https://www.amazon.com/Adafruit-Round-Force-Sensitive-Resistor-FSR/dp/B00XW2MIRQ/ref=sr_1_3?crid=1OGXQK6UD8IA6&keywords=force+sensitive+resistor&qid=1638487910&s=electronics&sprefix=Force+%2Celectronics%2C203&sr=1-3)
 * [External serial headers](https://www.amazon.com/DEPEPE-2-54mm-Headers-Arduino-Prototype/dp/B074HVBTZ4/ref=sr_1_15_sspa?keywords=external+header+pin&qid=1638487958&sr=8-15-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUE4VUdQU09GMktDWlYmZW5jcnlwdGVkSWQ9QTAyMDgxMjQyMlRYNU5ENUxWVk5BJmVuY3J5cHRlZEFkSWQ9QTAxMzc4ODA2MzVFREQ2TURXSVYmd2lkZ2V0TmFtZT1zcF9tdGYmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl)
 * [Servo SG90 motors](https://www.amazon.com/Micro-Servos-Helicopter-Airplane-Controls/dp/B07MLR1498/ref=sr_1_1_sspa?keywords=SG90&qid=1638487991&sr=8-1-spons&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzRjRJWkkzMDFVMU45JmVuY3J5cHRlZElkPUEwODg1OTc2M0lBNjZSVzNFNUpPOSZlbmNyeXB0ZWRBZElkPUEwNjU4NjQ2MlVBWjVRWlZaM1A5VCZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU&th=1)
-## **Hardware**
+## **Hardware
 <img src="schematic.png">
 
 ## Doxygen

@@ -26,11 +26,13 @@ var NAVTREE =
 [
   [ "Microprocessor 2", "index.html", [
     [ "Elevator Final Project", "index.html", [
-      [ "Components", "index.html#autotoc_md9", null ],
-      [ "Hardware", "index.html#autotoc_md10", null ],
-      [ "Development", "index.html#autotoc_md11", null ],
-      [ "License", "index.html#autotoc_md12", null ],
-      [ "Author:", "index.html#autotoc_md13", null ]
+      [ "Status", "index.html#autotoc_md9", null ],
+      [ "## Components", "index.html#autotoc_md10", null ],
+      [ "<strong>Hardware</strong>", "index.html#autotoc_md11", null ],
+      [ "<strong>Doxygen</strong>", "index.html#autotoc_md12", null ],
+      [ "<strong>Development</strong>", "index.html#autotoc_md13", null ],
+      [ "<strong>License</strong>", "index.html#autotoc_md14", null ],
+      [ "Author:", "index.html#autotoc_md15", null ]
     ] ],
     [ "PCB Design", "dd/dcf/md_doc_pages_hardware.html", [
       [ "<strong>Elevator Breadboard</strong>", "dd/dcf/md_doc_pages_hardware.html#autotoc_md1", null ],
@@ -43,27 +45,27 @@ var NAVTREE =
       [ "Author", "dd/dcf/md_doc_pages_hardware.html#autotoc_md7", null ]
     ] ],
     [ "<em>Sample project</em>", "d4/dcc/md_firmware__r_e_a_d_m_e.html", [
-      [ "How to use example", "d4/dcc/md_firmware__r_e_a_d_m_e.html#autotoc_md26", null ],
-      [ "Example folder contents", "d4/dcc/md_firmware__r_e_a_d_m_e.html#autotoc_md27", null ]
+      [ "How to use example", "d4/dcc/md_firmware__r_e_a_d_m_e.html#autotoc_md28", null ],
+      [ "Example folder contents", "d4/dcc/md_firmware__r_e_a_d_m_e.html#autotoc_md29", null ]
     ] ],
     [ "PCB Design", "df/d3f/md_hardware__r_e_a_d_m_e.html", [
-      [ "<strong>Elevator Breadboard</strong>", "df/d3f/md_hardware__r_e_a_d_m_e.html#autotoc_md29", null ],
-      [ "Schematic", "df/d3f/md_hardware__r_e_a_d_m_e.html#autotoc_md30", null ],
-      [ "Elevator PCB 2D front-view", "df/d3f/md_hardware__r_e_a_d_m_e.html#autotoc_md31", null ],
-      [ "Elevator PCB 3D front-view", "df/d3f/md_hardware__r_e_a_d_m_e.html#autotoc_md32", null ],
-      [ "Elevator PCB 3D back-view", "df/d3f/md_hardware__r_e_a_d_m_e.html#autotoc_md33", [
-        [ "<strong>Electronic Design Automation</strong>", "df/d3f/md_hardware__r_e_a_d_m_e.html#autotoc_md34", null ]
+      [ "<strong>Elevator Breadboard</strong>", "df/d3f/md_hardware__r_e_a_d_m_e.html#autotoc_md31", null ],
+      [ "Schematic", "df/d3f/md_hardware__r_e_a_d_m_e.html#autotoc_md32", null ],
+      [ "Elevator PCB 2D front-view", "df/d3f/md_hardware__r_e_a_d_m_e.html#autotoc_md33", null ],
+      [ "Elevator PCB 3D front-view", "df/d3f/md_hardware__r_e_a_d_m_e.html#autotoc_md34", null ],
+      [ "Elevator PCB 3D back-view", "df/d3f/md_hardware__r_e_a_d_m_e.html#autotoc_md35", [
+        [ "<strong>Electronic Design Automation</strong>", "df/d3f/md_hardware__r_e_a_d_m_e.html#autotoc_md36", null ]
       ] ],
-      [ "Author", "df/d3f/md_hardware__r_e_a_d_m_e.html#autotoc_md35", null ]
+      [ "Author", "df/d3f/md_hardware__r_e_a_d_m_e.html#autotoc_md37", null ]
     ] ],
     [ "Elevator Final Project", "d3/dcc/md__r_e_a_d_m_e.html", [
-      [ "Status", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md37", null ],
-      [ "## Components", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md38", null ],
-      [ "<strong>Hardware</strong>", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md39", null ],
-      [ "<strong>Doxygen</strong>", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md40", null ],
-      [ "<strong>Development</strong>", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md41", null ],
-      [ "<strong>License</strong>", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md42", null ],
-      [ "Author:", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md43", null ]
+      [ "Status", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md39", null ],
+      [ "## Components", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md40", null ],
+      [ "<strong>Hardware</strong>", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md41", null ],
+      [ "<strong>Doxygen</strong>", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md42", null ],
+      [ "<strong>Development</strong>", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md43", null ],
+      [ "<strong>License</strong>", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md44", null ],
+      [ "Author:", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md45", null ]
     ] ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
@@ -91,7 +93,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"df/d3f/md_hardware__r_e_a_d_m_e.html#autotoc_md33"
+"df/d3f/md_hardware__r_e_a_d_m_e.html#autotoc_md35"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

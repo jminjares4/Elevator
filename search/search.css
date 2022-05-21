@@ -11,9 +11,6 @@
     width: 161px;
     height: 24px;
     z-index: 102;
-    right: 10px;
-    display: inline;
-    position: absolute;
 }
 
 #MSearchBox .left

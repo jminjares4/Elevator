@@ -2,7 +2,7 @@
 
 This is the PCB design for the [`Elevator Controller Unit (ECU)`](https://github.com/jminjares4/Elevator) for Microprocessor 2 final project. The design consists of using an `ESP32` as the microcontroller (MCU) and additional hardware to emulate all the sensor that an elevator has: `force-sensitive sensor`, `accelerometer`, `PIR motion sensor`, `SG90 servo motor`, `buttons`, and `leds`
 ## **Elevator Breadboard**
-<img src="../img/schematic.png">
+<img src="../images/schematic.png">
 
 ## Schematic
 ![Schematic_Elevator Project_2021-12-02 (2)](https://user-images.githubusercontent.com/60948298/144516744-2e0abba3-9dce-4b31-8201-84048843467d.png)

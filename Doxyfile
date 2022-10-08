@@ -1267,7 +1267,7 @@ HTML_STYLESHEET        =
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
 HTML_EXTRA_STYLESHEET  =  third_party/doxygen-awesome-css/doxygen-awesome.css \
-                          custom_layout/microprocessor_2_template.css \
+                          custom_layout/elevator_template.css \
                           third_party/doxygen-awesome-css/doxygen-awesome-sidebar-only.css \
                           third_party/doxygen-awesome-css/doxygen-awesome-sidebar-only-darkmode-toggle.css
 

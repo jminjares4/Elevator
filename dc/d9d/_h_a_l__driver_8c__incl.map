@@ -1,0 +1,19 @@
+<map id="firmware/main/src/HAL_driver.c" name="firmware/main/src/HAL_driver.c">
+<area shape="rect" id="node1" title=" " alt="" coords="443,5,599,45"/>
+<area shape="rect" id="node2" href="$d0/d49/accelerometer_8h.html" title="Hardware Application Layer for ADXL335 Accelerometer." alt="" coords="216,93,351,119"/>
+<area shape="rect" id="node7" href="$d8/d81/elevator_8h.html" title=" " alt="" coords="921,93,1019,119"/>
+<area shape="rect" id="node9" href="$db/da0/led_8h.html" title="Hardware Application Layer for any LEDs." alt="" coords="485,93,556,119"/>
+<area shape="rect" id="node11" href="$de/d45/pressure__sensor_8h.html" title="Hardware Application Layer for Pressure Sensor." alt="" coords="42,93,191,119"/>
+<area shape="rect" id="node12" href="$d1/d35/serial__communication_8h.html" title="Hardware Application Layer for Serial Communication." alt="" coords="694,93,873,119"/>
+<area shape="rect" id="node15" href="$de/d09/servo_8h.html" title="Hardware Application Layer for Servo SG90 motor." alt="" coords="375,93,461,119"/>
+<area shape="rect" id="node17" href="$d7/d0e/button_8h.html" title="Hardware Application Layer for Buttons." alt="" coords="580,93,669,119"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,167,95,192"/>
+<area shape="rect" id="node4" title=" " alt="" coords="259,167,319,192"/>
+<area shape="rect" id="node5" title=" " alt="" coords="343,167,485,192"/>
+<area shape="rect" id="node6" title=" " alt="" coords="509,167,615,192"/>
+<area shape="rect" id="node8" title=" " alt="" coords="958,167,1022,192"/>
+<area shape="rect" id="node10" title=" " alt="" coords="639,167,731,192"/>
+<area shape="rect" id="node13" title=" " alt="" coords="843,167,934,192"/>
+<area shape="rect" id="node14" title=" " alt="" coords="755,167,819,192"/>
+<area shape="rect" id="node16" title=" " alt="" coords="119,167,234,192"/>
+</map>

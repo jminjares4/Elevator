@@ -1,0 +1,6 @@
+<map id="firmware/main/inc/accelerometer.h" name="firmware/main/inc/accelerometer.h">
+<area shape="rect" id="node1" title="Hardware Application Layer for ADXL335 Accelerometer." alt="" coords="143,5,363,31"/>
+<area shape="rect" id="node2" href="$d0/d29/main_8c.html" title=" " alt="" coords="5,86,151,111"/>
+<area shape="rect" id="node3" href="$d0/d56/_h_a_l__driver_8c.html" title=" " alt="" coords="175,79,331,119"/>
+<area shape="rect" id="node4" href="$d1/d2d/accelerometer_8c.html" title="accelerometer.h source code" alt="" coords="355,86,577,111"/>
+</map>

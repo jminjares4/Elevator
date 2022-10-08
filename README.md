@@ -1,7 +1,12 @@
 # Elevator Final Project
 
 ## Status
+<div align='center'>
+
 [![Doxygen Action](https://github.com/jminjares4/Elevator/actions/workflows/main.yml/badge.svg)](https://github.com/jminjares4/Elevator/actions/workflows/main.yml) [![pages-build-deployment](https://github.com/jminjares4/Elevator/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/jminjares4/Elevator/actions/workflows/pages/pages-build-deployment)
+[![GitHub Page](https://img.shields.io/badge/active-34c855.svg?style=flat&logo=github&logoColor=949da5&label=GitHub%20Page&labelColor=3f4851)](https://jminjares4.github.io/Elevator)
+
+</div>
 
   The project consists of an **Elevator Controller Unit (ECU)** for *Microprocessor 2* final project. **ECU** microcontroller (MCU) was `Espressif ESP32` running [FreeRTOS](https://www.freertos.org). The firmware has a custom `hardware application layer` ***(HAL)*** to avoid using Espressif API with a more approachable interface. Here is the list of all the files.
 ```

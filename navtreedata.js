@@ -29,12 +29,11 @@ var NAVTREE =
       [ "Status", "index.html#autotoc_md9", null ],
       [ "Components", "index.html#autotoc_md10", null ],
       [ "Hardware", "index.html#autotoc_md11", null ],
-      [ "Doxygen", "index.html#autotoc_md12", null ],
-      [ "Development", "index.html#autotoc_md13", null ],
-      [ "License", "index.html#autotoc_md14", null ],
-      [ "Author:", "index.html#autotoc_md15", null ]
+      [ "Development", "index.html#autotoc_md12", null ],
+      [ "License", "index.html#autotoc_md13", null ],
+      [ "Author", "index.html#autotoc_md14", null ]
     ] ],
-    [ "PCB Design", "dd/dcf/md_doc_pages_hardware.html", [
+    [ "Hardware", "dd/dcf/md_doc_pages_hardware.html", [
       [ "Elevator Breadboard", "dd/dcf/md_doc_pages_hardware.html#autotoc_md1", null ],
       [ "Schematic", "dd/dcf/md_doc_pages_hardware.html#autotoc_md2", null ],
       [ "Elevator PCB 2D front-view", "dd/dcf/md_doc_pages_hardware.html#autotoc_md3", null ],

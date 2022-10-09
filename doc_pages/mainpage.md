@@ -1,7 +1,13 @@
 # Elevator Final Project
 
 ## Status
+
+<div align='center'>
+
 [![Doxygen Action](https://github.com/jminjares4/Elevator/actions/workflows/main.yml/badge.svg)](https://github.com/jminjares4/Elevator/actions/workflows/main.yml) [![pages-build-deployment](https://github.com/jminjares4/Elevator/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/jminjares4/Elevator/actions/workflows/pages/pages-build-deployment)
+[![GitHub Page](https://img.shields.io/badge/active-34c855.svg?style=flat&logo=github&logoColor=949da5&label=GitHub%20Page&labelColor=3f4851)](https://jminjares4.github.io/Elevator)
+
+</div>
 
   The project consists of an Elevator Controller Unit (ECU)** for *Microprocessor 2* final project. **ECU** microcontroller (MCU) was `Espressif ESP32` running [FreeRTOS](https://www.freertos.org). The firmware has a custom `hardware application layer` ***(HAL)*** to avoid using Espressif API with a more approachable interface. Here is the list of all the files.
 ```
@@ -33,11 +39,9 @@
 * [Pressure sensor](https://www.amazon.com/Adafruit-Round-Force-Sensitive-Resistor-FSR/dp/B00XW2MIRQ/ref=sr_1_3?crid=1OGXQK6UD8IA6&keywords=force+sensitive+resistor&qid=1638487910&s=electronics&sprefix=Force+%2Celectronics%2C203&sr=1-3)
 * [External serial headers](https://www.amazon.com/DEPEPE-2-54mm-Headers-Arduino-Prototype/dp/B074HVBTZ4/ref=sr_1_15_sspa?keywords=external+header+pin&qid=1638487958&sr=8-15-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUE4VUdQU09GMktDWlYmZW5jcnlwdGVkSWQ9QTAyMDgxMjQyMlRYNU5ENUxWVk5BJmVuY3J5cHRlZEFkSWQ9QTAxMzc4ODA2MzVFREQ2TURXSVYmd2lkZ2V0TmFtZT1zcF9tdGYmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl)
 * [Servo SG90 motors](https://www.amazon.com/Micro-Servos-Helicopter-Airplane-Controls/dp/B07MLR1498/ref=sr_1_1_sspa?keywords=SG90&qid=1638487991&sr=8-1-spons&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzRjRJWkkzMDFVMU45JmVuY3J5cHRlZElkPUEwODg1OTc2M0lBNjZSVzNFNUpPOSZlbmNyeXB0ZWRBZElkPUEwNjU4NjQ2MlVBWjVRWlZaM1A5VCZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU&th=1)
+
 ## Hardware
 <img src="schematic.png">
-
-## Doxygen
-![image](https://user-images.githubusercontent.com/60948298/144520203-1a12df03-c54e-4767-9a92-effcdff6a5b9.png)
 
 ## Development
 | Elevator Components | Hardware/Software|
@@ -51,8 +55,12 @@
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Author:
+## Author
 * [Jesus Minjares](https://github.com/jminjares4)<br>
   * Master of Science in Computer Engineering<br>
 [![Outlook](https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white&style=flat)](mailto:jminjares4@miners.utep.edu) 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&style=flat)](https://www.linkedin.com/in/jesus-minjares-157a21195/) [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white&style=flat)](https://github.com/jminjares4)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&style=flat)](https://www.linkedin.com/in/jesusminjares/) [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white&style=flat)](https://github.com/jminjares4)
+
+<span class="next_section_button">
+Read Next: [Hardware](@ref doc_pages/hardware.md)
+</span>
